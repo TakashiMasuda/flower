@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/プリザーブドフラワー</title>
+
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- コース案内のCSSファイルを読み込む。 -->
+			<link href="css/courseguide.css" rel="stylesheet" type="text/css">
+			<!-- ギャラリーページのCSSファイルを読み込む。 -->
+			<link href="css/gallery.css" rel="stylesheet" type="text/css">
+			<!-- jqueryUIのcssを読み込む -->
+			<link type="text/css" href="css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+			<!-- fancyboxのCSSを読み込む。 -->
+			<link rel="stylesheet" type="text/css" href="js/source/jquery.fancybox.css" media="screen" />
+			<script>
+				creator.getJsonFile('source/gallery.json');			// ギャラリーページ用のJSONデータを取得する。
+				creator.getJsonFile('source/gallerycontent.json');	// フォトギャラリー用のJSONデータを取得する。
+				creator.getJsonFile('source/commonJson.json');		// 各ページ共通のパーツのJSONデータを取得する。
+				creator.getDomFile('source/template.html');			// HTMLのテンプレートデータをを取得する。
+				creator.outputTag('headImage', 'createImage');		// 天の画像を作る
+				creator.outputTag('pageTitle');						// タイトル領域を作る
+				creator.outputTag('gallery');						// ギャラリーページ用のギャラリーを作る。
+				//ギャラリーの内容を追加する。
+				outputKeyNumberObject(creator.json, 'photo', '.gallery');
+				creator.outputTag('footImage', 'createImage');		// 地の画像を作る
+				creator.outputTag('footer');						// フッターを作る
+			
+				// メイン領域にヘッダーの高さ分のmarginを設定し、固定スクロール時に埋もれるのを阻止する。
+				fixYCoordinate('header', '.main');
+				// position:fixed;を設定したヘッダーが横スクロールしない問題を解決する関数をコールする。
+				fixXCoordinateOnScroll('header')
+				//ギャラリーの画像を拡大できるようにする。
+				useZoomImage('photo');
+			</script>
+		</div>
+	</div>
+</body>
+</html>

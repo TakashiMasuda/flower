@@ -1,0 +1,52 @@
+{
+    "pageTitle": {
+        "class": "pageTitle cf",
+        "image": {
+            "src": "image/icon(fish100).jpg"
+        },
+        "title": {
+            "text": "Myギャラリー"
+        },
+        "summary": {
+            "text": ""
+        }
+    },
+    "myGallery": {},
+    "myGalleryEditButtons": {
+        "createButton": {
+            "text": "新規"
+        },
+        "deleteButton": {
+            "text": "削除"
+        },
+        "uploader":{
+        	"type":"file",
+        	"style":"display:none"
+        }
+    },
+    "blankPhoto": {
+        "class": "myPhoto",
+        "myPhotoLink": {
+            "href": "",
+            "rel": "gallery",
+            "myPhotoImage": {
+                "style": ""
+            }
+        },
+        "myPhotoDate": {
+            "text": ""
+        },
+        "myPhotoTitle": {
+            "text": "入力してください。"
+        },
+        "myPhotoUser": {
+            "text": ""
+        },
+        "myPhotoComment": {
+            "text": "入力してください。"
+        },
+        "myPhotoCheck": {
+            "type": "checkbox"
+        }
+    }
+}

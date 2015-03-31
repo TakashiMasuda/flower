@@ -1,0 +1,525 @@
+@CHARSET "UTF-8";
+
+ /* 
+ * セレクタ:.blogRightContent
+ * 概要   :ブログページの右側コンテンツ。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.19
+ */
+.blogRightContent{
+	width:	70%;	/* 幅を70%にして左側コンテンツと並べる。 */
+	float:	right;	/* 右に寄せる。 */
+}
+
+ /* 
+ * セレクタ:.blog
+ * 概要   :ブログ記事のタグ。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.19
+ */
+.blog {
+}
+
+/* 
+ * セレクタ:.blogArticle
+ * 概要   :ブログ記事本体。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.12
+ */
+.blogArticle {
+	width			: 100%;			/*幅を右側コンテンツ領域一杯に広げる。*/
+	margin			: 0 auto 20px;	/*水平位置を中央に合わせる。また、下に余白を空ける。*/
+	background		:#FFCC99 ;		/*背景色をベージュにする。*/
+	border-radius	:10px;			/*記事領域の角を丸くする。*/
+	padding			: 10px 2%;		/* 全体方向に内側の余白を入れる。 */
+	box-sizing		: border-box;	/* 幅の計算にborderとpaddingを加える。 */
+}
+
+/* 
+ * セレクタ:.blogArticleTitle
+ * 概要   :ブログ記事のタイトル領域。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.12
+ */
+.blogArticleTitle {
+	width		: 98%;			/*左右marginの分を引いて領域一杯に幅を取る。*/
+	font-size	: 0px;			/*子要素をinline-blockで横並べにするため、余計な余白が出ないよう設定する。*/
+	display		: inline-block;	/* インラインブロックにする。 */
+}
+
+/* 
+ * セレクタ:.blogArticleTitle > *
+ * 概要   :ブログ記事のタイトル領域直下の要素
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.12
+ */
+ .blogArticleTitle > * {
+ 	display: inline-block;		/*floatを使わずに横並びにする。*/
+	vertical-align: bottom;		/*下端に合わせる。*/
+ }
+
+
+ /* 
+ * セレクタ:.blogArticleTitleText
+ * 概要   :ブログ記事のタイトル。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.12
+ * 変更者 :T.Yamamoto
+ * 変更日 :2015.03.19
+ * 内容　 :word-breakを設定しました。
+ */
+.blogArticleTitleText {
+	width		: 60%;		/*タイトルなので広く幅を取る。*/
+	font-size	: 20px;		/*大きめのフォント。*/
+	font-weight	: bold;		/*太字にする。*/
+	word-break: break-all;	/* 単語レベルでの改行をさせない。 */
+}
+
+ /* 
+ * セレクタ:.blogArticleDate
+ * 概要   :ブログ記事の日付。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.12
+ * 変更者 :T.Masuda
+ * 変更日 :2015.03.19
+ * 内容　 :右marginを追加しました。
+ */
+ .blogArticleDate {
+ 	width		:auto;		/*日付表示に必要なだけ幅を取る。*/
+	font-size	:12px;		/*小さめのフォントを使う。*/
+	margin-right: 0.5em;	/* 半文字分のスペースをあける。 */
+ }
+
+ /* 
+ * セレクタ:.blogArticleUserName
+ * 概要   :ブログ記事のユーザ名。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.12
+ */
+.blogArticleUserName {
+	width		:20%;		/*目立ちすぎないように幅は狭めにする。*/
+	font-size	:14px;		/*小さめのフォントを使う。*/
+}
+
+ /* 
+ * セレクタ:.blogArticleImages
+ * 概要   :ブログ記事の画像の領域。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.12
+ */
+.blogArticleImages {
+	width		:25%;	/*mainの1/5の幅を取る。*/
+	float		:left;	/*左に寄せる。*/
+	margin-right: 5px;	/* テキスト部分と間隔を取る。 */
+}
+
+ /* 
+ * セレクタ:.blogArticleImages img
+ * 概要   :ブログ記事の画像。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.12
+ * 変更者 :T.Masuda
+ * 変更日 :2015.03.19
+ * 内容　 :幅を変更しました。
+ */
+.blogArticleImages img{
+	width			:100%;		/*幅を外枠に合わせる。*/
+	margin			:5px auto;	/*上下5pxの余白を配置し、水平位置を中央に合わせる。*/
+	display			:block;		/*marginによる中央寄せを有効にするための設定。*/
+	border-radius	:5px;		/*画像の角を丸くする。*/
+}
+
+ /* 
+ * セレクタ:.blogArticleImages img[src=""]
+ * 概要   :ブログ記事の空画像。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.13
+ */
+.blogArticleImages img[src=""]{
+	 /* 非表示3セット */
+	 width:0px;
+	 height:0px;
+	 display: none;
+}
+
+ /* 
+ * セレクタ:.blogArticleText
+ * 概要   :ブログ記事の本文。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.12
+ * 変更者 :T.Masuda
+ * 変更日 :2015.03.19
+ * 内容　 :幅を変更しました。
+ */
+.blogArticleText {
+	width		:95%;		/*画像と横並びにできてかつ、十分余白が取れる幅を設定する。*/
+	margin		:10px 5%;	/*上下10pxの余白を配置し、左右に同じだけの余白を取る。*/
+	font-size	:16px;		/*標準的なフォントサイズにする。*/
+}
+
+ /* 
+ * セレクタ:.blogLeftContent
+ * 概要   :ブログページの左側コンテンツ。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.19
+ */
+.blogLeftContent{
+	width:	30%;	/* 右側のコンテンツと並べられる幅に設定する */
+	float:	left;	/* 左に寄せる。 */
+}
+
+ /* 
+ * セレクタ:.calendar
+ * 概要   :ブログページのカレンダー。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.19
+ */
+.calendar{
+	display: inline-block;	/* インラインブロックにして横に並べる。 */
+	font-size: 12px;		/* フォントサイズを小さくし、カレンダーそのものを小さくする。 */
+	margin-bottom: 10px;	/* 下marginを入れる。 */
+}
+ /* 
+ * セレクタ:.calendar　> div
+ * 概要   :ブログページのカレンダー。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.19
+ */
+.calendar > div{
+	/* インラインブロックにして幅を取りすぎないようにする。
+	!importantを指定してライブラリによるブロック要素指定をキャンセルする。 */
+	display: inline-block!important;
+}
+
+ /* 
+ * セレクタ:.currentArticleListTitle
+ * 概要   :最新記事の一覧のタイトル部分。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.19
+ */
+.currentArticleListTitle{
+	font-size:	13px;	/* 左側コンテンツの他の文字より大きめにする。 */
+}
+
+ /* 
+ * セレクタ:.currentArticleListContent
+ * 概要   :最新記事の一覧項目。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.19
+ */
+.currentArticleListContent{
+	font-size: 11px;	/* 領域が狭いので、小さめの文字を使う。 */
+	margin-bottom	:3px;	/* 項目間で少し間隔をあける。 */
+}
+
+ /* 
+ * セレクタ:.currentArticleListContentDate
+ * 概要   :最新記事の一覧項目の日付部分。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.19
+ */
+.currentArticleListContentDate{
+	width: auto;		/* 日付を表示するための最低限の幅を取る。 */
+	float	:left;		/* 左に詰める。 */
+	margin-right: 1em;	/* ユーザ名との間に1文字分の間隔をあける。 */
+}
+
+ /* 
+ * セレクタ:.currentArticleListContentUser
+ * 概要   :最新記事の一覧項目のユーザ名。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.19
+ */
+.currentArticleListContentUser{
+	width			: 45%;		/* 日付と横並びにできるサイズにする。 */
+	float			: left;		/* 左に詰める。 */
+	/* 文字幅がオーバーしたら...を表示する設定。 */
+	overflow		: hidden; 	/* はみ出した文字を隠す。 */
+	white-space		: nowrap; 	/* 改行・連続するスペースを無視する。 */
+	text-overflow	: ellipsis;	/* テキストがはみ出したら点を表示する。 */
+	/* ここまで一連の設定。 */
+}
+
+ /* 
+ * セレクタ:.currentArticleListContentTitle
+ * 概要   :最新記事の一覧項目の記事タイトル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.19
+ */
+.currentArticleListContentTitle{
+	padding-left	: 0.5em;	/* 半文字分インデントをかける。 */
+	clear			: both;		/* 回り込みを防止する。 */
+	font-size		: 12px;		/* フォントサイズを大きめにする。 */
+	width			: 90%;		/* 幅を左paddingを考慮した上で一杯に広げる。 */
+	/* 文字幅がオーバーしたら...を表示する設定。 */
+	overflow		: hidden; 	/* はみ出した文字を隠す。 */
+	white-space		: nowrap; 	/* 改行・連続するスペースを無視する。 */
+	text-overflow	: ellipsis;	/* テキストがはみ出したら点を表示する。 */
+	/* ここまで一連の設定。 */
+}
+
+ /* 
+ * セレクタ:.blogArticleListButton
+ * 概要   :ブログ画面でのブログリストを呼び出すボタン
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.12
+ */
+.blogArticleListButton {
+	width		:3%;			/*1つのボタンという程度の幅を取る。*/
+	transform	:lotate(270);	/*文字を右に向ける。*/
+	font-size	:20px;			/*わかりやすい大きな文字にする。*/
+}
+
+ /* 
+ * セレクタ:.blogArticleList
+ * 概要   :ブログ記事のタイトル領域。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.12
+ */
+ .blogArticleList {
+ 	padding-left	:2em;		/*左に2文字分のインデントをつける。*/
+	list-stye		:none;		/*リストの項目の先頭に点をつけない。*/
+ }
+
+ /* 
+ * セレクタ:.blogArticleListTitle
+ * 概要   :ブログリストのタイトル部分。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.12
+ */
+.blogArticleListTitle {
+	font-size	:20px;		/*見出しサイズのフォントサイズを指定する。*/
+}
+
+ /* 
+ * セレクタ:blogArticleListContent
+ * 概要   :ブログリストの項目。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.12
+ */
+.blogArticleListContent {
+	padding-left:1em;	/*左に1文字分のインデントをつける。*/
+	font-size	:18px;		/*項目サイズのフォントサイズを指定する。*/
+}
+
+ /* 
+ * セレクタ:blogArticleListContentDate
+ * 概要   :ブログリストの項目の日付部分。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.12
+ */
+.blogArticleListContentDate {
+	margin-right	:1em;		/*右に1文字分の余白をつける。*/
+}
+
+ /* 
+ * セレクタ:#pageslide(pageslide)
+ * 概要   :jQueryプラグイン「pageslide」による画面にスライドインするリストの領域。
+　　　　　　　　　.blogArticleListと同じタグにこのIDは付与される。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.12
+ */
+#pageslide {
+	background	:#CEDC3A;		/*サイトのメインで使っている背景色を適用する。*/
+}
+
+ /* 
+ * セレクタ:.numbering
+ * 概要   :ナンバリング
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.12
+ */
+ .numbering {
+ 	width:auto;				/*フォントサイズに合わせた幅を指定する。*/
+ 	display: block;			/* ブロック要素にする。 */
+ 	margin: 10px auto;		/* 中心に揃える。 */
+ 	text-align:	center;		/* ボタンを中心に寄せる。 */
+ 	clear: both;			/* 回り込みをなくす。 */
+ }
+
+ /* 
+ * セレクタ:.numbering li
+ * 概要   :ナンバリングのボタン。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.12
+ */
+ .numbering li{
+ 	width:auto;					/* フォントサイズに合わせた幅を指定する。*/
+ 	display: inline-block;		/* ブロック要素にする。 */
+ 	margin: 0 0.1%;				/* ボタン同士を離す。 */
+ 	padding: 0.3em 1em;			/* ボタンを広げる。 */
+ 	color: BLACK;				/* 黒文字にする。 */
+ 	cursor: pointer;			/* カーソルを指差しにする。 */
+ }
+
+ /* 
+ * セレクタ:.numbering li
+ * 概要   :選択中のナンバリングのボタン。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.13
+ */
+ .numbering li.select{
+ 	font-weight: bold;	/* 太字にする。 */
+ 	color		: RED;	/* グレー文字にする。 */
+ }
+
+ /* 
+ * セレクタ:.numbering li:empty
+ * 概要   :空のナンバリングのボタン。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.12
+ */
+ .numbering li:empty{
+ 	/* 非表示3セット */
+ 	width:0px;
+ 	height:0px;
+ 	display: none;
+ }
+ 
+/* スマホ・タブレットレイアウト */
+@media(max-width:680px){
+
+	 /* 
+	 * セレクタ:.blogRightContent, .blogLeftContent
+	 * 概要   :ブログページの左右のコンテンツ。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.19
+	 */
+	.blogRightContent, .blogLeftContent{
+		width	:	100%;			/* 幅を100%に設定し、段組みを崩す */
+		margin	:	0 auto 10px;	/*上下5pxの余白を配置し、中央に寄せる。*/
+		float	:	none;			/* 右に寄せる。 */
+		display	:	block;			/* ブロック要素として表示する。 */
+	}
+	
+	 /* 
+	 * セレクタ:.blogLeftContent > *
+	 * 概要   :ブログページの左側のコンテンツのひとつひとつ。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.19
+	 */
+	.blogLeftContent > *{
+		width	:	90%;			/* 幅を90%に設定し、多少の余白を残す。 */
+		margin	:	0 auto 10px;	/*上下5pxの余白を配置し、中央に寄せる。*/
+	}
+	
+	/* 
+	 * セレクタ:.blogArticle
+	 * 概要   :ブログ記事本体。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.19
+	 */
+	.blogArticle {
+		padding: 10px 5%;	/* スマホレイアウト時はpaddingを増やす。 */
+		width:90%;
+	}
+		
+	 /* 
+	 * セレクタ:.blogArticleTitle
+	 * 概要   :スマホ用、ブログ記事のタイトル領域。
+	 * 設計者 :T.Masuda
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.03.12
+	 */
+	 .blogArticleTitle {
+		width: 100%;			/* 幅をできるだけ広げる。 */	
+		box-sizing: border-box;	/* paddingを幅の計算に含む。 */
+		margin: 0;				/* marginを消す。 */
+	}
+
+	 /* 
+	 * セレクタ:.blogArticleImage
+	 * 概要   :スマホ用、ブログ記事の画像
+	 * 設計者 :T.Masuda
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.03.12
+	 */
+	 .blogArticleImage {
+	 	margin		:10px auto;	/*PC時より画像同士の間隔を詰める*/
+	 }
+
+	 /* 
+	 * セレクタ:.blogArticleTitleText
+	 * 概要   :ブログ記事のタイトル。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.19
+	 */
+	.blogArticleTitleText {
+		font-size: 16px;		/* フォントを小さくする */
+		width: 100%;			/* タイトルで1行取る */
+	}
+
+	 /* 
+	 * セレクタ:.blogArticleUserName
+	 * 概要   :ブログ記事のユーザ名。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.19
+	 */
+	.blogArticleUserName {
+		width: 65%;			/* タイトルと違う行になったため、もっと幅を取る。 */
+		font-size: 12px;	/* より小さめのフォントを使う。 */
+	}
+
+	 /* 
+	 * セレクタ:.blogArticleText
+	 * 概要   :ブログ記事の本文。
+	 * 設計者 :T.Masuda
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.03.12
+	 */
+	 .blogArticleText {
+	 	width: 100%;			/*段組みレイアウトをやめているので、十分に幅を広げる。*/
+	 	font-size:	13px;		/* フォントサイズを小さくしてバランスを整える。 */
+	 	margin: 0;				/* marginをなくす。 */
+	 }
+	 
+	 /* 
+	 * セレクタ:.calendar
+	 * 概要   :ブログページのカレンダー。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.19
+	 */
+	.calendar{
+		display: block;	/* スマホレイアウトではブロック要素にする。 */
+	}
+	
+	 /* 
+	 * セレクタ:.calendar　> div
+	 * 概要   :ブログページのカレンダー。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.19
+	 */
+	.calendar > div {
+		display: block!important;	/* ブロック要素にする */
+		margin: 0 auto ;			/* 中央に寄せる。 */
+	}
+
+	 /* 
+	 * セレクタ:.blogArticleListButton
+	 * 概要   :ブログ画面でのブログリストを呼び出すボタン
+	 * 設計者 :T.Masuda
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.03.12
+	 */
+	 .blogArticleListButton {
+	 	width:auto;		/*フォントサイズに合わせた幅を指定する。*/
+	 }
+}
+
+ 

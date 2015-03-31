@@ -1,0 +1,41 @@
+{
+    "pageTitle": {
+        "class": "pageTitle cf",
+        "image": {
+            "src": "image/icon(accessbird).png"
+        },
+        "title": {
+            "text": "マイページ"
+        },
+        "summary": {
+            "text": ""
+        }
+    },
+    "myPageReserved": {
+        "myPageReservedTitle": {
+        	"text":"予約一覧"
+        },
+        "myPageReservedList": {},
+        "myPageReservedCalendar": {}
+    },
+    "myPageBlog": {
+        "myPageBlogTitle": {
+        	"text":"ブログ"
+        },
+        "myPageBlogButton1": {
+            "class": "myPageBlogButton",
+            "href":"createarticle.html",
+            "text":"記事編集"
+        },
+        "myPageBlogButton2": {
+            "class": "myPageBlogButton",
+            "href":"#myoption.html",
+            "text":"個人設定"
+        },
+        "myPageBlogButton3": {
+            "class": "myPageBlogButton",
+            "href":"#mygallery.html",
+            "text":"Myギャラリー"
+        }
+    }
+}

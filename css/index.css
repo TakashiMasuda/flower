@@ -1,0 +1,207 @@
+@CHARSET "UTF-8";
+
+/* 
+ * セレクタ:.flowerBackground
+ * 概要   :トップページの背景。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.21
+ */
+.flowerBackground{
+    position: relative;	/* 相対位置の基準に指定する。 */
+}
+
+
+ /* 
+ * セレクタ:.topic
+ * 概要   :トップページで最新の記事見出しを表示する小ウィンドウ。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.12
+ * 変更者 :T.Masuda
+ * 変更日 :2015.03.19
+ * 内容　 :背景色を変更しました。
+ */
+.topic {
+	width			: 280px;					/*幅を内容に合わせる。*/
+	padding			: 2px 10px 5px;				/*内側に余白を作る。*/
+	border			: 1px solid #FFF;			/*灰色の枠線を引く。*/
+	/* 影がかかる方向には枠線を引かない。 */
+	border-right		:none;
+	border-bottom		:none;
+	background		: #e9ffbc;					/*サイトのメインで使っている背景色を適用する。*/
+	position		: absolute;					/*絶対位置を指定する。座標はJavaScriptで指定する。*/
+	border-radius	: 10px;						/* 角に丸みをつける。 */
+	box-shadow		: 5px 5px 5px 0px #666;	/* 上と左に影をつける。 */
+}
+
+ /*
+ * セレクタ:.topicTitle
+ * 概要   :トピックのタイトル部分。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.12
+ * 変更者 :T.Masuda
+ * 変更日 :2015.03.19
+ * 内容　 :フォントサイズを変更しました。また、インラインブロックにしました。
+ */
+.topicTitle {
+	font-size: 14px;			/*見出しにちょうどいいサイズのフォントサイズを指定する。*/
+	display			: inline-block;	/* インラインブロックにする。 */
+	clear			: both;			/* 回り込みをなくす。 */
+	vertical-align: middle;		/* 隣の文字列と位置を合わせる。 */
+	font-weight: bold;
+}
+
+ /* 
+ * セレクタ:.topicTitleDeco
+ * 概要   :トピックのタイトル部分の「New」の文字。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.12
+ * 変更者 :T.Masuda
+ * 変更日 :2015.03.19
+ * 内容　 :インラインブロックにしました。
+ */
+.topicTitleDeco {
+	font-size		: 11px;			/* 補足程度のフォントサイズにする。 */
+	color: white;			/* 濃いめの灰色の文字にする。 */
+	background: #FFF100;		/* 黄色の背景にする。 */
+	display			: inline-block;	/* インラインブロック。 */
+	clear			: both;			/* 回り込みをなくす。 */
+	vertical-align	: middle;		/* 位置を上に合わせる。 */
+	padding: 0 3px;			/* 1px領域を広げる。 */
+	margin			: 2px;			/* 全方向にmarginをつける。 */
+}
+
+ /* 
+ * セレクタ:.topicBorder
+ * 概要   :コンテンツとの境界線。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.19
+ */
+.topicBorder{
+	/* リセットCSSでmarginの基準にemが設定されているため、margin消しにフォントサイズ0を指定する。 */
+	font-size:0px;
+	visibility: hidden;	/* 隠す。 */
+}
+
+ /* 
+ * セレクタ:.topicContent
+ * 概要   :トピックの最新記事見出しの一覧を表示する領域。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.12
+ * 変更者 :T.Masuda
+ * 変更日 :2015.03.19
+ * 内容　 :floatで横並べにしました。また、box-sizingを適用しました。
+ */
+.topicContent {
+	padding: 0 10px 0em;		/*上に2em、左右に5px、下に4emのmarginを配置する。*/
+	width: 90px;			/*marginと合わせて100pxの幅を取る。*/
+	display		: block;			/*インラインブロックにして横並びにできるようにする。*/
+	float		: left;				/* 左に寄せる。 */
+	box-sizing	: border-box;		/* border、paddingを幅の計算に入れる。 */
+}
+
+ /* 
+ * セレクタ:.topicContentImage
+ * 概要   :トピックの最新記事の画像。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.12
+ * 変更者 :T.Masuda
+ * 変更日 :2015.03.19
+ * 内容　 :blog記事を参考にした、画像の比率を固定する手法を導入しました。
+ */
+.topicContentImage {
+    display: inline-block;				/* インラインブロック */
+    background-color: white;				/* 背景の色を灰色にする。 */
+    background-position: center center;	/* 背景の位置を中心にする。 */
+    background-repeat: no-repeat;		/* 背景の繰り返しをなくす。 */
+    margin: 0px;						/* marginを使わない。 */
+    width: 76px;						/* 固定値で幅を指定する。 */
+    height: 76px;						/* 高さも固定値 */
+    border: 3px solid white;				/* 灰色の枠線を引く。 */
+    background-size: cover;				/* 背景のサイズを */
+    border-radius: 10px;				/* 角に丸みをつける。 */
+}
+
+ /* 
+ * セレクタ:.topicContentDate,.topicContentTitle, .topicContentUserName
+ * 概要   :トピックの最新記事の情報。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.20
+ */
+.topicContentDate,.topicContentTitle, .topicContentUserName {
+	font-size		: 10px;		/* フォントサイズを小さいものにする */
+	display			: block;	/* ブロック要素に指定する。 */
+	margin			: 0 auto;	/* 中央に寄せる。 */
+	/* 文字幅がオーバーしたら...を表示する設定。 */
+	overflow		: hidden; 	/* はみ出した文字を隠す。 */
+	white-space		: nowrap; 	/* 改行・連続するスペースを無視する。 */
+	text-overflow	: ellipsis;	/* テキストがはみ出したら点を表示する。 */
+	/* ここまで一連の設定。 */
+}
+
+/* 以下3個のスタイルシートはtopicの絶対位置指定のテストです。実際にはJavaScriptで位置を指定すべきです。 */
+.topic:nth-of-type(1){
+	top: 50px;
+	right: 50px;
+}
+.topic:nth-of-type(2){
+	top: 75px;
+	right: 40px;
+}
+.topic:nth-of-type(3){
+	top: 100px;
+	right: 30px;
+}
+
+/* スマホ・タブレットレイアウト */
+@media(max-width:680px){
+
+	/* 
+	 * セレクタ:.flowerBackground
+	 * 概要   :トップページの背景。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.21
+	 */
+	.flowerBackground{
+	    height: auto;          /* トップページ用の画像の高さに合わせた領域を形成する。 */
+	    width: 100%;          /* 外枠に幅を合わせる。 */
+		margin-top: 1px!important;	/* スマホレイアウト時は上marginを固定にする。 */
+	}
+	/* 
+	 * セレクタ:.flowerImage
+	 * 概要   :トップページの背景画像。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.21
+	 */
+	.flowerImage{
+		width:100%;		/* 画像の幅を100%にする */
+		height: auto;	/* 画像の幅に比率を合わせた高さにする */
+	}
+
+	 /* 
+	 * セレクタ:.topic
+	 * 概要   :トップページで最新の記事見出しを表示する小ウィンドウ。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.19
+	 */
+	.topic{
+		display:block;
+	}
+	.topic:nth-of-type(1){
+		top: 25px;
+		right: 15px;
+	}
+	.topic:nth-of-type(2){
+		top: 50px;
+		right: 10px;
+	}
+	.topic:nth-of-type(3){
+		top: 75px;
+		right: 5px;
+	}
+}

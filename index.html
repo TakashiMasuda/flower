@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes">
+<meta charset="UTF-8">
+<title>DDT Flowers</title>
+<!-- ファビコンを設定する。 -->
+<link rel="shortcut icon" href="image/icon/icon(mobile32).ico">
+<!-- iPhone用のアイコンを設定する。 -->
+<link rel="apple-touch-icon" href="image/icon/icon(mobile).ico">
+
+<!-- メインのCSSファイルを読み込む。 -->
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<!-- トップページのCSSファイルを読み込む。 -->
+<link href="css/index.css" rel="stylesheet" type="text/css">
+<!-- jqueryUIのcssを読み込む -->
+<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.min.css" media="screen" />
+<!-- SmoothDivScrollのCSSを読み込む。 -->
+<link rel="stylesheet" type="text/css" href="css/smoothDivScroll.css" media="screen" />
+<!-- fancyboxのCSSを読み込む。 -->
+<link rel="stylesheet" type="text/css" href="js/source/jquery.fancybox.css" media="screen" />
+<!-- smallipopのCSSを読み込む。 -->
+<link rel="stylesheet" type="text/css" href="css/jquery.smallipop.min.css" media="screen" />
+<!-- smallipopで要求されるCSSを読み込む。 -->
+<link rel="stylesheet" type="text/css" href="css/animate.min.css" media="screen" />
+
+
+<!-- jQueryの本体を読み込む。 -->
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- jQueryUIを読み込む。 -->
+<script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
+<!-- サイト全体のレイアウト調整用JSファイル。 -->
+<script src="js/flowersstylefix.js"></script>
+<!-- タグを作成するJSの関数群を読み込む -->
+<script type="text/javascript" src="js/createTag.js"></script>
+<!-- カルーセルのギャラリー生成プラグイン「Slick」の本体を読み込む。 -->
+<script type="text/javascript" src="js/slick.min.js" ></script>
+<!-- クリックした画像をピックアップ表示するためのjQueryプラグイン「fancybox」の本体を読み込む。 -->
+<script type="text/javascript" src="js/source/jquery.fancybox.js" ></script>
+<!-- マウスホイールの動きに対応するプラグインを読み込む。 -->
+<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+<!-- ドラッグ用のjQueryプラグインを読み込む。 -->
+<script type="text/javascript" src="js/jquery.kinetic.min.js"></script>
+<!-- Smooth DIV Scrollの本体を読み込む。 -->
+<script type="text/javascript" src="js/jquery.smoothDivScroll-1.3.js"></script>
+<!-- easytabsの本体を読み込む。 -->
+<script type="text/javascript" src="js/jquery.easytabs.js"></script>
+<!-- smallipopの本体を読み込む。 -->
+<script type="text/javascript" src="js/jquery.smallipop.min.js"></script>
+<!-- smallipopの必要なファイルを読み込む。 -->
+<script type="text/javascript" src="js/modernizr.js"></script>
+<script src="js/binaryajax.js"></script>
+<script src="js/exif.js"></script>
+<script src="js/canvasResize.js"></script>
+
+<!-- 画面操作の処理を記述したJSファイルを読み込む。 -->
+<script type="text/javascript" src="js/controlPage.js"></script>
+<!-- ダイアログ作成の処理を記述したJSファイルを読み込む。 -->
+<script type="text/javascript" src="js/createDialog.js"></script>
+<!-- 小規模のの処理を記述したJSファイルを読み込む。 -->
+<script type="text/javascript" src="js/createLittleContent.js"></script>
+<!-- ユーザのアクションに対応するイベントを定義したJSファイルを読み込む。 -->
+<script type="text/javascript" src="js/controlAction.js"></script>
+
+</head>
+<body>
+<!-- container -->
+<div id="container">
+	<header class="header"></header>
+	<div class="main"></div>
+<!-- JavaScriptのコードを記述する -->
+<script>
+
+//ドキュメント配備後
+$(document).ready(function(){
+	creator = new createTag();
+
+	creator.getJsonFile('source/index.json');				// ファイルのデータをjsonを用いて持ってくる
+	creator.getJsonFile('source/commonJson.json');			// ファイルのデータをjsonを用いて持ってくる
+	creator.getDomFile('source/template.html');				// ファイルのhtmlデータをdomを用いて持ってくる
+	//ヘッダー内のタグが作成済みでなければ
+	if($('header').children().length <= 0){
+		creator.outputTag('guides', 'guides', '.header');		// ガイド領域を作る
+		creator.outputTag('topMenu', 'topMenu', '.header');		// トップメニューを作る
+		// ログイン状態をチェックする。
+		checkLoginState();
+	}
+	creator.outputTag('flowerBackground', 'createImage');	// トップページ背景を作る
+	//ブログのお知らせを作る。
+	creator.outputTag('topicGallery','topic', '.flowerBackground');
+	creator.outputTag('topicCampaign','topic', '.flowerBackground');
+	creator.outputTag('topicBlog','topic', '.flowerBackground');
+	creator.outputTag('footer');							// フッターを作る
+	
+	// トップメニューにマウスオーバーのフィルターを配置する。
+	functionFilter('.topMenu li');
+
+	// メイン領域にヘッダーの高さ分のmarginを設定し、固定スクロール時に埋もれるのを阻止する。
+	fixYCoordinate('header', '.flowerBackground');
+	// position:fixed;を設定したヘッダーが横スクロールしない問題を解決する関数をコールする。
+	fixXCoordinateOnScroll('header')
+	//テーブルの全レコード選択の処理をオンにする。
+	checkAllRecord()
+	//JSONデータを格納する変数を初期化する。
+	creator.json = null;
+	//ひな形のHTMLのDOMを格納する変数を初期化する。
+	creator.dom = '';
+
+});
+
+</script>
+</div>
+<a href="mypage.html" style="display:block;font-size:10px;">mypage</a>
+<a href="admin.html" style="display:block;font-size:10px;">admin</a>
+</body>
+</html>

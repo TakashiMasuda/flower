@@ -1,0 +1,31 @@
+{
+    "pageTitle": {
+        "class": "pageTitle cf",
+        "image": {
+            "src": "image/icon(redbranchleaf).png"
+        },
+        "title": {
+            "text": "ブログ"
+        },
+        "summary": {
+            "text": ""
+        }
+    },
+    "blogArticleList": {
+        "blogArticleListTitle": {
+            "text": "ブログリスト"
+        },
+        "blogArticleListContent": {
+            "blogArticleListContentDate": {
+                "text": "2015/03/01"
+            },
+            "blogArticleListContentTitle": {
+                "text": "ブログはじめました!"
+            }
+        }
+    },
+    "blog":{},
+    "numberingOuter":{},
+    "blogLeftContent":{},
+    "blogRightContent":{}
+}

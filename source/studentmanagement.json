@@ -1,0 +1,477 @@
+{
+    "nameSearch": {
+        "articleSearchLabel": {
+            "text": "氏名"
+        },
+        "articleSearchTextBox": {
+            "type": "text",
+            "name": "nameSearch"
+        }
+    },
+    "emailSearch": {
+        "articleSearchLabel": {
+            "text": "メールアドレス"
+        },
+        "articleSearchTextBox": {
+            "type": "text",
+            "name": "emailSearch"
+        }
+    },
+    "telSearch": {
+        "articleSearchLabel": {
+            "text": "電話番号"
+        },
+        "articleSearchTextBox": {
+            "type": "text",
+            "name": "telSearch"
+        }
+    },
+    "studentListHeadWrap": {
+        "class": "recordWrapper",
+        "studentListHead": {
+            "class": "studentListHead tableHead",
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "nameHead": {
+                "text": "氏名"
+            },
+            "emailHead": {
+                "text": "メールアドレス"
+            },
+            "telHead": {
+                "text": "電話番号"
+            }
+        }
+    },
+    "listEditButtons": {
+        "createNew": {
+            "text": "登録",
+            "href": "studentregistration.html"
+        },
+        "edit": {
+            "text": "編集",
+            "href": "studentregistration.html"
+        },
+        "delete": {
+            "text": "削除"
+        }
+    },
+    "editStudent": {
+        "class": "editStudent imitateForm",
+        "action": "confirmregist.html",
+        "formBody": {
+            "class": "formBody cf",
+            "name": {
+                "formContent": {
+                    "text": "氏名"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "Name"
+                }
+            },
+            "nameTextBox": {
+                "textBox": {
+                    "type": "text",
+                    "name": "name",
+                    "size": "60",
+                    "required": ""
+                }
+            },
+            "sex": {
+                "formContent": {
+                    "text": "性別"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "Sex"
+                }
+            },
+            "sexRadioButton": {
+                "sexRadioButtonFemale": {
+                    "type": "radio",
+                    "name": "sex",
+                    "value": "女",
+                    "checked": ""
+                },
+                "sexRadioButtonFemaleLabel": {
+                    "text": "女"
+                },
+                "sexRadioButtonMale": {
+                    "type": "radio",
+                    "name": "sex",
+                    "value": "男"
+                },
+                "sexRadioButtonMaleLabel": {
+                    "text": "男"
+                }
+            },
+            "eMail": {
+                "formContent": {
+                    "text": "メールアドレス"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "E-mail"
+                }
+            },
+            "eMailTextBox": {
+                "textBox": {
+                    "type": "email",
+                    "name": "eMail",
+                    "size": "60",
+                    "required": ""
+                }
+            },
+            "eMailConfirm": {
+                "formContent": {
+                    "text": "メールアドレス(確認)"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": ""
+                }
+            },
+            "eMailConfirmTextBox": {
+                "textBox": {
+                    "type": "email",
+                    "name": "eMailConfirm",
+                    "size": "60",
+                    "required": ""
+                }
+            },
+            "tel": {
+                "formContent": {
+                    "text": "電話番号"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "tel"
+                }
+            },
+            "telTextBox": {
+                "textBox": {
+                    "type": "text",
+                    "name": "tel",
+                    "size": "60",
+                    "required": ""
+                }
+            },
+            "address": {
+                "formContent": {
+                    "text": "住所"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "address"
+                }
+            },
+            "addressTextBox": {
+                "textBox": {
+                    "type": "text",
+                    "name": "address",
+                    "size": "60",
+                    "required": ""
+                }
+            }
+        },
+        "submit": {
+            "text": "登録へ",
+            "href": "studentmanagement.html",
+            "onclick":""
+        },
+        "back": {
+            "href": "studentmanagement.html",
+            "text": "戻る",
+            "onclick": ""
+        }
+    },
+    "entryStudent": {
+        "class": "entryStudent editStudent imitateForm",
+        "action": "confirmregist.html",
+        "formBody": {
+            "class": "formBody cf",
+            "name": {
+                "formContent": {
+                    "text": "氏名"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "Name"
+                }
+            },
+            "nameTextBox": {
+                "textBox": {
+                    "type": "text",
+                    "name": "name",
+                    "size": "60",
+                    "required": ""
+                }
+            },
+            "sex": {
+                "formContent": {
+                    "text": "性別"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "Sex"
+                }
+            },
+            "sexRadioButton": {
+                "sexRadioButtonFemale": {
+                    "type": "radio",
+                    "name": "sex",
+                    "value": "女",
+                    "checked": ""
+                },
+                "sexRadioButtonFemaleLabel": {
+                    "text": "女"
+                },
+                "sexRadioButtonMale": {
+                    "type": "radio",
+                    "name": "sex",
+                    "value": "男"
+                },
+                "sexRadioButtonMaleLabel": {
+                    "text": "男"
+                }
+            },
+            "eMail": {
+                "formContent": {
+                    "text": "メールアドレス"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "E-mail"
+                }
+            },
+            "eMailTextBox": {
+                "textBox": {
+                    "type": "email",
+                    "name": "eMail",
+                    "size": "60",
+                    "required": ""
+                }
+            },
+            "eMailConfirm": {
+                "formContent": {
+                    "text": "メールアドレス(確認)"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": ""
+                }
+            },
+            "eMailConfirmTextBox": {
+                "textBox": {
+                    "type": "email",
+                    "name": "eMailConfirm",
+                    "size": "60",
+                    "required": ""
+                }
+            },
+            "tel": {
+                "formContent": {
+                    "text": "電話番号"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "tel"
+                }
+            },
+            "telTextBox": {
+                "textBox": {
+                    "type": "text",
+                    "name": "tel",
+                    "size": "60",
+                    "required": ""
+                }
+            },
+            "address": {
+                "formContent": {
+                    "text": "住所"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "address"
+                }
+            },
+            "addressTextBox": {
+                "textBox": {
+                    "type": "text",
+                    "name": "address",
+                    "size": "60",
+                    "required": ""
+                }
+            }
+        },
+        "submit": {
+            "text": "登録へ",
+            "href": "",
+            "onclick":"",
+            "type":"submit",
+            "value":"登録へ"
+        },
+        "back": {
+            "text": "戻る",
+            "href": "",
+            "onclick": "history.back();"
+        }
+    },
+    "confirmRegistration": {
+        "message": {
+            "text": "会員登録>確認画面"
+        },
+        "noticeList": {
+            "LI": [
+                "以下の内容でよろしければ「送信する」ボタンを押して下さい。"
+            ]
+        },
+        "confirmRegistrationTable": {
+            "name": {
+                "head": {
+                    "text": "氏名"
+                },
+                "data": {
+                    "text": ""
+                }
+            },
+            "sex": {
+                "head": {
+                    "text": "性別"
+                },
+                "data": {
+                    "text": ""
+                }
+            },
+            "eMail": {
+                "head": {
+                    "text": "メールアドレス"
+                },
+                "data": {
+                    "text": ""
+                }
+            },
+            "tel": {
+                "head": {
+                    "text": "電話番号"
+                },
+                "data": {
+                    "text": ""
+                }
+            },
+            "address": {
+                "head": {
+                    "text": "ご住所"
+                },
+                "data": {
+                    "text": ""
+                }
+            }
+        },
+        "br": {},
+        "sendForm": {
+            "class": "sendForm imitateForm",
+            "action": "sendconfirmmail.html",
+            "backButton": {
+                "class": "backButtonbutton",
+                "type": "button",
+                "value": "<前に戻る",
+                "onclick": "history.back()"
+            },
+            "sendButton": {
+                "class": "sendButtonbutton submit",
+                "type": "submit",
+                "value": "送信する>",
+                "onclick":""
+            },
+            "sendValue1": {
+            	"class":"sendValue",
+            	"type":"hidden",
+            	"name":"name",
+            	"value":""
+            },
+            "sendValue2": {
+            	"class":"sendValue",
+            	"type":"hidden",
+            	"name":"sex",
+            	"value":""
+            },
+            "sendValue3": {
+            	"class":"sendValue",
+            	"type":"hidden",
+            	"name":"eMail",
+            	"value":""
+            },
+            "sendValue4": {
+            	"class":"sendValue",
+            	"type":"hidden",
+            	"name":"tel",
+            	"value":""
+            },
+            "sendValue5": {
+            	"class":"sendValue",
+            	"type":"hidden",
+            	"name":"address",
+            	"value":""
+            }
+        }
+    },
+    "sendConfirmMail": {
+        "firstLine": {
+            "text": "会員登録メールを送信しました。"
+        },
+        "secondLine": {
+            "text": "入力したメールアドレスに本登録用のURLを記載したメールを送信しました。"
+        },
+        "thirdLine": {
+            "text": "24時間以内に本登録用のURLにアクセスして登録を完了してください。"
+        },
+        "returnToTop": {
+            "text": "トップへ戻る",
+            "href": "index.html"
+        }
+    },
+    "errorConfirm": {
+        "firstLine": {
+            "text": ""
+        },
+        "secondLine": {
+            "text": "通信中にエラーが発生しました。"
+        },
+        "thirdLine": {
+            "text": "前のページに戻って操作をやり直してください。"
+        },
+        "returnToTop": {
+            "text": "トップへ戻る",
+            "href": "index.html"
+        }
+    }
+}

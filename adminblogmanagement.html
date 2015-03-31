@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/管理者画面</title>
+</head>
+<body>
+	<div id="container">
+	<div class="main">
+	<script>
+		//管理者ブログ管理のJSONを読み込む。
+		creator.getJsonFile('source/admin.json');				// 管理者画面のJSONを取得する。
+		creator.getJsonFile('source/adminblogmanagement.json');
+		creator.getJsonFile('source/adminbloglist.json');
+		creator.getDomFile('source/template.html');		// ファイルのhtmlデータをdomを用いて持ってくる
+		
+		// 管理者ブログ一覧を作る。
+		//検索領域を作る。
+		creator.outputTag('contentSearch', 'contentSearch', '#adminBlogManagement');
+		//記事タイトル検索を作る。
+		creator.outputTag('titleSearch', 'articleSearch', '#adminBlogManagement .contentSearch');
+		//日付サーチを作る。
+		creator.outputTag('dateSearch', 'articleSearch', '#adminBlogManagement .contentSearch');
+		//著者絞り込みを作る。
+		creator.outputTag('authorSearch', 'articleSearch', '#adminBlogManagement .contentSearch');
+		//表形式のブログリストの外枠を作る。
+		creator.outputTag('managementList', 'managementList', '#adminBlogManagement');
+		//表の見出しを作る。
+		creator.outputTag('adminBlogListHeadWrap', 'adminBlogListHeadWrap', '#adminBlogManagement .table');
+		//DOM配置の都合上付いてしまった親のtableタグを消す。
+		unwrapTable('.adminBlogListHead');
+		//表の内容を作る。
+ 		outputKeyNumberObject(creator.json, 'adminBlogListContentWrap', '#adminBlogManagement .table');
+		//編集ボタンを作る。
+		creator.outputTag('listEditButtons', 'listEditButtons', '#adminBlogManagement');
+		$('#adminBlogManagement button').button();	//ボタンをリッチなものにする。	
+		//日付入力テキストボックスをクリックするとカレンダーが出る様にする。
+		setCallCalendar('.tabPanel.active input.calendar');
+		</script>
+	</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,182 @@
+{
+    "flowerBackground": {
+        "class": "flowerBackground",
+        "flowerImage": {
+            "src": "image/top(800).png"
+        }
+    },
+    "topicBlog": {
+        "class": "topic",
+        "topicTitle": {
+            "text": "Blog"
+        },
+        "topicTitleDeco": {
+            "text": "New"
+        },
+        "topicBorder": {},
+        "topicContent1": {
+            "href": "#",
+            "class": "topicContent",
+            "topicContentImage": {
+                "style": "background-image:url('photo/general/web120/DSC_1086.jpg')"
+            },
+            "topicContentDate": {
+                "text": "15/03/19"
+            },
+            "topicContentUserName": {
+                "text": "FlowerMaster"
+            },
+            "topicContentTitle": {
+                "text": "今日のピックアップ"
+            }
+        },
+        "topicContent2": {
+            "href": "#",
+            "class": "topicContent",
+            "topicContentImage": {
+                "style": "background-image:url('photo/general/web120/DSC_1061.jpg')"
+            },
+            "topicContentDate": {
+                "text": "15/03/19"
+            },
+            "topicContentUserName": {
+                "text": "FlowerMaster"
+            },
+            "topicContentTitle": {
+                "text": "満員御礼"
+            }
+        },
+        "topicContent3": {
+            "href": "#",
+            "class": "topicContent",
+            "topicContentImage": {
+                "style": "background-image:url('photo/general/web120/DSC_1038.jpg')"
+            },
+            "topicContentDate": {
+                "text": "15/03/19"
+            },
+            "topicContentUserName": {
+                "text": "FlowerMaster"
+            },
+            "topicContentTitle": {
+                "text": "今日も一日"
+            }
+        }
+    },
+    "topicCampaign": {
+        "class": "topic",
+        "topicTitle": {
+            "text": "Campaign"
+        },
+        "topicTitleDeco": {
+            "text": "New"
+        },
+        "topicBorder": {},
+        "topicContent1": {
+            "href": "#",
+            "class": "topicContent",
+            "topicContentImage": {
+                "style": "background-image:url('photo/general/web120/DSC_1025.jpg')"
+            },
+            "topicContentDate": {
+                "text": "15/03/19"
+            },
+            "topicContentUserName": {
+                "text": "FlowerMaster"
+            },
+            "topicContentTitle": {
+                "text": "ライムカラーローズ"
+            }
+        },
+        "topicContent2": {
+            "href": "#",
+            "class": "topicContent",
+            "topicContentImage": {
+                "style": "background-image:url('photo/general/web120/DSC_1008.jpg')"
+            },
+            "topicContentDate": {
+                "text": "15/03/19"
+            },
+            "topicContentUserName": {
+                "text": "FlowerMaster"
+            },
+            "topicContentTitle": {
+                "text": "バルーンアレンジ"
+            }
+        },
+        "topicContent3": {
+            "href": "#",
+            "class": "topicContent",
+            "topicContentImage": {
+                "style": "background-image:url('photo/general/web120/DSC_0985.jpg')"
+            },
+            "topicContentDate": {
+                "text": "15/03/19"
+            },
+            "topicContentUserName": {
+                "text": "FlowerMaster"
+            },
+            "topicContentTitle": {
+                "text": "Spring"
+            }
+        }
+    },
+    "topicGallery": {
+        "class": "topic",
+        "topicTitle": {
+            "text": "Gallery"
+        },
+        "topicTitleDeco": {
+            "text": "New"
+        },
+        "topicBorder": {},
+        "topicContent1": {
+            "href": "#",
+            "class": "topicContent",
+            "topicContentImage": {
+                "style": "background-image:url('photo/general/web120/DSC_0947.jpg')"
+            },
+            "topicContentDate": {
+                "text": "15/03/19"
+            },
+            "topicContentUserName": {
+                "text": "FlowerMaster"
+            },
+            "topicContentTitle": {
+                "text": "テスト投稿1"
+            }
+        },
+        "topicContent2": {
+            "href": "#",
+            "class": "topicContent",
+            "topicContentImage": {
+                "style": "background-image:url('photo/general/web120/DSC_0898.jpg')"
+            },
+            "topicContentDate": {
+                "text": "15/03/19"
+            },
+            "topicContentUserName": {
+                "text": "FlowerMaster"
+            },
+            "topicContentTitle": {
+                "text": "テスト投稿2"
+            }
+        },
+        "topicContent3": {
+            "href": "#",
+            "class": "topicContent",
+            "topicContentImage": {
+                "style": "background-image:url('photo/general/web120/DSC_0894.jpg')"
+            },
+            "topicContentDate": {
+                "text": "15/03/19"
+            },
+            "topicContentUserName": {
+                "text": "FlowerMaster"
+            },
+            "topicContentTitle": {
+                "text": "テスト投稿3"
+            }
+        }
+    }
+}

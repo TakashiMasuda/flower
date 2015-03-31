@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/管理者画面</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<script>
+				creator.getJsonFile('source/admin.json');				// 管理者画面のJSONを取得する。
+				creator.getJsonFile('source/commonJson.json');			// 共通のパーツのJSONを取得する。
+				creator.getJsonFile('source/customize.json');			// カスタマイズタブのJSONを読み込む。
+				creator.getDomFile('source/template.html');		// ファイルのhtmlデータをdomを用いて持ってくる
+				
+				// 管理者画面のコンテンツを作る。
+				creator.outputTag('contentManagement', 'tabContainer', '#customize');
+				creator.outputTag('customizeTabs', 'customizeTabs', '#customize .contentManagement');
+				creator.outputTag('customizePanels', 'customizePanels', '#customize .contentManagement');
+		
+				//タブのコンテンツを作成する。
+				createTab('#customize .contentManagement');
+				//アップロードボタンを押してファイルを選択するイベントを定義する関数をコールする。
+				clickButtonToFile('#customize .value', '#customize textarea');
+				//テキストエリアをクリックしたら編集ダイアログを出す。
+				useEditDialog('.editValue');
+			</script>
+		</div>
+	</div>
+</body>
+</html>

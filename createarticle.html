@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/記事作成</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- コース案内のCSSファイルを読み込む。 -->
+			<link href="css/courseguide.css" rel="stylesheet" type="text/css">
+			<!-- マイページのCSSファイルを読み込む。 -->
+			<link href="css/mypage.css" rel="stylesheet" type="text/css">
+			<script>
+				creator.getJsonFile('source/createarticle.json');	// マイページのJSONを取得する。
+				creator.getJsonFile('source/commonJson.json');		// 各ページ共通のパーツのJSONを取得する。
+				creator.getDomFile('source/template.html');			// ファイルのhtmlデータをdomを用いて持ってくる
+			
+				creator.outputTag('headImage', 'createImage');		// 天の画像を作る
+				creator.outputTag('pageTitle');						// タイトル領域を作る
+				
+				creator.outputTag('blogEditImages');				//ブログ記事画像編集領域を作る。
+				//ブログ記事画像編集パーツを3つ作る。
+				creator.outputTag('blogEditImagesSection','blogEditImagesSection','.blogEditImages');
+				creator.outputTag('blogEditImagesSection','blogEditImagesSection','.blogEditImages');
+				creator.outputTag('blogEditImagesSection','blogEditImagesSection','.blogEditImages');
+				creator.outputTag('blogEditText');					//ブログの本文作成領域を作る。
+				creator.outputTag('blogEditButtons');				//編集確定か否かを選択するボタン群を作る。
+				
+				creator.outputTag('footImage', 'createImage');		// 地の画像を作る
+				creator.outputTag('footer');						// フッターを作る
+				
+				// メイン領域にヘッダーの高さ分のmarginを設定し、固定スクロール時に埋もれるのを阻止する。
+				fixYCoordinate('header', '.main');
+				// position:fixed;を設定したヘッダーが横スクロールしない問題を解決する関数をコールする。
+				fixXCoordinateOnScroll('header');
+				
+				//ボタンをjQueryUIのリッチなボタンにする。
+				$('.main button').button();
+			</script>
+		</div>
+	</div>
+</body>
+</html>

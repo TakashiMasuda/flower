@@ -1,0 +1,47 @@
+{
+    "pageTitle": {
+        "class": "pageTitle cf",
+        "image": {
+            "src": "image/icon(accessbird).png"
+        },
+        "title": {
+            "text": "記事作成"
+        },
+        "summary": {
+            "text": ""
+        }
+    },
+    "blogEditImages": {},
+    "blogEditImagesSection": {
+    	"class":"blogEditImagesSection cf",
+        "blogEditImagesSectionImage": {
+        
+        },
+        "blogEditImagesSectionAddButton": {
+        	"text":"選択",
+        	"onclick":"$(this).next().click();"
+        },
+        "blogEditImagesSectionAddButtonMain":{
+        	"type":"file",
+        	"style":"display:none;"
+        },
+        "blogEditImagesSectionDeleteButton": {
+        	"text":"削除"
+        }
+    },
+    "blogEditText": {
+    	"class":"blogEditText cf",
+        "blogEditTextarea": {}
+    },
+    "blogEditButtons": {
+     	"class":"blogEditButtons cf",
+        "blogEditButtonsOKButton": {
+        	"text":"　 OK 　",
+        	"href":"adminblogmanagement.html"
+        },
+        "blogEditButtonsCancelButton": {
+        	"text":"キャンセル",
+        	"href":"adminblogmanagement.html"
+        }
+    }
+}

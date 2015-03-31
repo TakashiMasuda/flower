@@ -1,0 +1,63 @@
+{
+    "titleSearch": {
+        "articleSearchLabel": {
+            "text": "タイトル"
+        },
+        "articleSearchTextBox": {
+            "type": "text",
+            "name": "titleSearch"
+        }
+    },
+    "dateSearch": {
+        "articleSearchLabel": {
+            "text": "日付"
+        },
+        "articleSearchTextBox": {
+            "type": "text",
+            "name": "dateSearch",
+            "class": "articleSearchTextBox calendar"
+        }
+    },
+    "authorSearch": {
+        "articleSearchLabel": {
+            "text": "著者"
+        },
+        "articleSearchTextBox": {
+            "type": "text",
+            "name": "authorSearch"
+        }
+    },
+    "adminBlogListHeadWrap": {
+        "class": "recordWrapper",
+        "adminBlogListHead": {
+        "class":"adminBlogListHead tableHead",
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "dateHead": {
+                "text": "日付"
+            },
+            "authorHead": {
+                "text": "著者"
+            },
+            "titleHead": {
+                "text": "タイトル"
+            }
+        }
+    },
+    "listEditButtons": {
+        "createNew": {
+            "text": "作成",
+            "href": "createarticleintab.html"
+        },
+        "edit": {
+            "text": "編集",
+            "href": "createarticleintab.html"
+        },
+        "delete": {
+            "text": "削除"
+        }
+    }
+}

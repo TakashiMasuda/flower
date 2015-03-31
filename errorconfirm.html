@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<script>
+				creator.getJsonFile('source/commonJson.json');			// ファイルのデータをjsonを用いて持ってくる
+				creator.getJsonFile('source/studentmanagement.json');	// 生徒さん情報管理のためのjsonを取得する。
+				creator.getDomFile('source/template.html');				// ファイルのhtmlデータをdomを用いて持ってくる
+				creator.outputTag('headImage', 'createImage');			// 天の画像を作る
+				creator.outputTag('errorConfirm', 'showMessage');		// エラー発生のメッセージを出す。
+				creator.outputTag('footImage', 'createImage');			// 地の画像を作る
+				creator.outputTag('footer');							// フッターを作る
+				// メイン領域にヘッダーの高さ分のmarginを設定し、固定スクロール時に埋もれるのを阻止する。
+				fixYCoordinate('header', '.main');
+			</script>
+		</div>
+	</div>
+</body>
+</html>

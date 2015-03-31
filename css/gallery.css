@@ -1,0 +1,244 @@
+@CHARSET "UTF-8";
+
+/* ギャラリーページのCSSファイル。 */
+
+/* 
+ * セレクタ:.gallery
+ * 概要   :ギャラリー。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.20
+ */
+.gallery{
+	width: 100%;	/* 幅を.mainに合わせる。 */
+}
+
+/* 
+ * セレクタ:.photo
+ * 概要   :写真1枚に対するボックス。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.20
+ */
+.photo{
+	width: 90px;			/* 1行で6枚の写真を並べる。 */
+	height: 125px;			/* 内容に関わらず高さを揃える。 */
+	float		: left;				/* 横に並べる。 */
+	margin		: 5px;				/* 全方向にmarginを配置する。 */
+	padding		: 5px 10px;			/* 内側の余白を指定する。 */
+	box-sizing: border-box;		/* paddingとborderを幅計算に入れる。 */
+	border		: 1px solid #CCC;	/* 灰色の線で囲む。 */
+	font-size	: 10px;				/* 写真がメインなので、字は添える程度の小さいものにする。 */
+	border-radius: 5px;				/* 角に丸みをつける。 */
+}
+
+/* 
+ * セレクタ:.photoImageThumb
+ * 概要   :ギャラリーのサムネイル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.20
+ */
+.photoImage{
+    width	: 100%;		/* 幅を親に合わせる。 */
+    height	: auto;		/* 高さは子に合わせる。 */
+    display	: block;	/* ブロック要素にする。 */
+}
+
+/* 
+ * セレクタ:.photoImageThumb
+ * 概要   :ギャラリーのサムネイル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.20
+ */
+.photoImageThumb{
+    display: inline-block;				/* インラインブロック */
+    background-color: white;			/* 背景の色を白にする。 */
+    background-position: center center;	/* 背景の位置を中心にする。 */
+    background-repeat: no-repeat;		/* 背景の繰り返しをなくす。 */
+    margin: 0px;						/* marginを使わない。 */
+    width: 100%;						/* 固定値で幅を指定する。 */
+    height: 68px;						/* 高さも固定値 */
+    background-size: contain;			/* サムネイルを縦横比に関わらず全体表示する。 */
+    border-radius: 10px;				/* 角に丸みをつける。 */
+}
+
+/* 
+ * セレクタ:.photoDate, .photoUserName, .photoTitle
+ * 概要   :写真の情報テキスト。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.20
+ */
+.photoDate, .photoUserName, .photoTitle{
+	float:left;	/* 左に寄せる。 */
+}
+
+/* 
+ * セレクタ:.photoDate, .photoUserName
+ * 概要   :写真の情報テキストの最後尾以外の要素のクラス。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.20
+ */
+.photoDate, .photoUserName, .photoTitle{
+	margin-right: 1em;	/* 右に1文字分の間隔を取る。 */
+	/* 文字幅がオーバーしたら...を表示する設定。 */
+	overflow		: hidden; 	/* はみ出した文字を隠す。 */
+	white-space		: nowrap; 	/* 改行・連続するスペースを無視する。 */
+	text-overflow	: ellipsis;	/* テキストがはみ出したら点を表示する。 */
+	/* ここまで一連の設定。 */
+}
+
+/* ここからMyギャラリー */
+/* 
+ * セレクタ:.myGallery
+ * 概要   :ギャラリー。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.27
+ */
+.myGallery{
+	width: 90%;	/* 幅を.mainに合わせる。 */
+	margin: 0 auto;
+	font-size: 0px;
+}
+
+/* 
+ * セレクタ:.myPhoto
+ * 概要   :写真1枚に対するボックス。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.27
+ */
+.myPhoto{
+	width			: 90px;				/* 1行で6枚の写真を並べる。 */
+	height			: 155px;			/* 内容に関わらず高さを揃える。 */
+	margin			: 5px;				/* 全方向にmarginを配置する。 */
+	padding			: 5px 10px;			/* 内側の余白を指定する。 */
+	box-sizing		: border-box;		/* paddingとborderを幅計算に入れる。 */
+	border			: 1px solid #CCC;	/* 灰色の線で囲む。 */
+	font-size		: 10px;				/* 写真がメインなので、字は添える程度の小さいものにする。 */
+	border-radius	: 5px;				/* 角に丸みをつける。 */
+	display			:inline-block;
+	vertical-align: top;
+}
+
+/* 
+ * セレクタ:.myPhoto > *
+ * 概要   :写真の情報テキスト。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.27
+ */
+.myPhoto > *{
+	width	:100%;		/* 幅をいっぱい広げる。。 */
+	display	:block;		/* ブロック要素として扱う。 */
+	/* margin-bottom: 5px; */	/* 要素同士間隔を取る。 */
+	/* 文字幅がオーバーしたら...を表示する設定。 */
+	overflow		: hidden; 	/* はみ出した文字を隠す。 */
+	white-space		: nowrap; 	/* 改行・連続するスペースを無視する。 */
+	text-overflow	: ellipsis;	/* テキストがはみ出したら点を表示する。 */
+	/* ここまで一連の設定。 */
+}
+
+/* 
+ * セレクタ:.myPhotoLink
+ * 概要   :ギャラリーのサムネイル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.27
+ */
+.myPhotomyPhotoLink{
+    width	: 100%;		/* 幅を親に合わせる。 */
+    height	: auto;		/* 高さは子に合わせる。 */
+    display	: block;	/* ブロック要素にする。 */
+}
+
+/* 
+ * セレクタ:.myPhotoImage
+ * 概要   :ギャラリーのサムネイル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.27
+ */
+.myPhotoImage{
+    display: inline-block;				/* インラインブロック */
+    background-color: white;			/* 背景の色を白にする。 */
+    background-position: center center;	/* 背景の位置を中心にする。 */
+    background-repeat: no-repeat;		/* 背景の繰り返しをなくす。 */
+    margin: 0px;						/* marginを使わない。 */
+    width: 100%;						/* 固定値で幅を指定する。 */
+    height: 68px;						/* 高さも固定値 */
+    background-size: contain;			/* サムネイルを縦横比に関わらず全体表示する。 */
+    border-radius: 10px;				/* 角に丸みをつける。 */
+}
+
+/* 
+ * セレクタ:.myPhoto .myPhotoCheck
+ * 概要   :写真のチェックボックス。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.27
+ */
+.myPhoto .myPhotoCheck{
+    width: auto;		/* 一括で指定された幅をキャンセルする。 */
+}
+
+/* 
+ * セレクタ:.myGalleryEditButtons
+ * 概要   :Myギャラリーの編集を行うボタン群。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.27
+ */
+.myGalleryEditButtons{
+    display		: block;		/* 表示に1行丸々使う。 */
+    text-align	: right;		/* ボタンを右に寄せる。 */
+}
+
+/* 
+ * セレクタ:.myGalleryEditButtons button
+ * 概要   :Myギャラリーの編集を行うボタン。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.27
+ */
+.myGalleryEditButtons button{
+    margin		: 0.5em;		/* 全方向に余白を取る。 */
+}
+
+/* スマホ・タブレットレイアウト */
+@media(max-width:680px){
+
+	/* 
+	 * セレクタ:.gallery
+	 * 概要   :ギャラリー。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.20
+	 */
+	.gallery{
+		width		: 90%;		/* スマホコンテンツ用の幅にする。 */
+		margin		: 0 auto;	/* 中央に寄せる。 */
+		font-size	: 0px;		/* .photoをインラインブロックにするので、余計な余白消しの設定をする。 */
+		text-align	: center;	/* 写真を中央に寄せる。 */
+	}
+	
+	/* 
+	 * セレクタ:.photo
+	 * 概要   :写真1枚に対するボックス。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.20
+	 */
+	.photo{
+		margin	: 3px;			/* marginを小さくして幅を調整する。 */
+		float	: none;			/* floatを解除する。 */
+		display	: inline-block;	/* floatではなくインラインブロックで並べる。 */
+	}
+	
+	/* 
+	 * セレクタ:.myGallery
+	 * 概要   :Myギャラリー。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.27
+	 */
+	.myGallery {
+		text-align: center;	/* 写真を中心に寄せる。 */
+	}	
+	/* 
+	 * セレクタ:.myPhoto
+	 * 概要   :Myギャラリーの写真。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.27
+	 */
+	.myPhoto {
+		text-align: left;	/* 内容を左に寄せる。 */
+	}	
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- コース案内のCSSファイルを読み込む。 -->
+			<link href="css/courseguide.css" rel="stylesheet" type="text/css">
+			<!-- SmoothDivScrollのCSSを読み込む。 -->
+			<link type="text/css" href="css/smoothDivScroll.css" rel="stylesheet">
+			<!-- fancyboxのCSSを読み込む。 -->
+			<link rel="stylesheet" type="text/css" href="js/source/jquery.fancybox.css" media="screen" />
+			<script>
+				creator.getJsonFile('source/nfd.json');			// ファイルのデータをjsonを用いて持ってくる
+				creator.getJsonFile('source/commonJson.json');	// ファイルのデータをjsonを用いて持ってくる
+				creator.getDomFile('source/template.html');		// ファイルのhtmlデータをdomを用いて持ってくる
+				creator.outputTag('headImage', 'createImage');	// 天の画像を作る
+				creator.outputTag('pageTitle');					// タイトル領域を作る
+				creator.outputTag('merit', 'description');		// ご入会メリットを作る
+				creator.outputTag('photoGallery');				// ギャラリー画像を作る
+				creator.outputTag('footGallery');				// ギャラリー画像を作る
+				creator.outputTag('courseGuide');				// コース案内テーブルを作る
+				creator.outputTag('lessonSchedule');			//レッスンスケジュールテーブル
+				creator.outputTag('commonText', 'itemList');	//共通リストテーブルを作る
+				creator.outputTag('memberRule', 'itemList');	// 会員規約のリストテーブルを作る
+				creator.outputTag('footImage', 'createImage');	// 地の画像を作る
+				creator.outputTag('footer');					// フッターを作る
+			
+				// メイン領域にヘッダーの高さ分のmarginを設定し、固定スクロール時に埋もれるのを阻止する。
+				fixYCoordinate('header', '.main');
+				// position:fixed;を設定したヘッダーが横スクロールしない問題を解決する関数をコールする。
+				fixXCoordinateOnScroll('header');
+				//slickによるカルーセルのギャラリーを作成する。
+				createGallery('footGallery');
+			</script>
+		</div>
+	</div>
+</body>
+</html>

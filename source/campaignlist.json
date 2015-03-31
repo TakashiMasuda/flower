@@ -1,0 +1,78 @@
+{
+    "1": {
+        "class": "recordWrapper",
+        "campaignListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "title": {
+                "text": "新年度キャンペーン"
+            },
+            "startDate": {
+                "text": "2015/03/28"
+            },
+            "endDate": {
+                "text": "2015/04/03"
+            }
+        }
+    },
+    "2": {
+        "class": "recordWrapper",
+        "campaignListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "title": {
+                "text": "パン作り講座"
+            },
+            "startDate": {
+                "text": "2015/03/18"
+            },
+            "endDate": {
+                "text": "2015/03/18"
+            }
+        }
+    },
+    "3": {
+        "class": "recordWrapper",
+        "campaignListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "title": {
+                "text": "お値引きキャンペーン"
+            },
+            "startDate": {
+                "text": "2015/03/01"
+            },
+            "endDate": {
+                "text": "2015/03/07"
+            }
+        }
+    },
+    "4": {
+        "class": "recordWrapper",
+        "campaignListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "title": {
+                "text": "バレンタイン前キャンペーン"
+            },
+            "startDate": {
+                "text": "2015/02/01"
+            },
+            "endDate": {
+                "text": "2015/02/13"
+            }
+        }
+    }
+}

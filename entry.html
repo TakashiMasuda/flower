@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/ご入会手続き</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- 管理者画面のCSSファイルを読み込む。 -->
+			<link href="css/admin.css" rel="stylesheet" type="text/css" />
+			<script>
+				creator.getJsonFile('source/studentmanagement.json');
+				creator.getJsonFile('source/admin.json');				// 管理者画面のJSONを取得する。
+				creator.getJsonFile('source/commonJson.json');			// 共通のパーツのJSONを取得する。
+				creator.getDomFile('source/template.html');				// パーツのテンプレートのDOMを取得する。
+				creator.outputTag('headImage', 'createImage');			// 天の画像を作る
+				// 生徒さんの登録コンテンツを作る。
+				creator.outputTag('entryStudent', 'editStudent');
+		 		creator.outputTag('footImage', 'createImage');			// 地の画像を作る
+				creator.outputTag('footer');							// フッターを作る
+			
+				//生徒さんの登録のJSONを読み込む。
+			</script>
+		</div>
+	</div>
+</body>
+</html>

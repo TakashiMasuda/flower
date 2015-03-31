@@ -1,0 +1,34 @@
+<!-- DDTFlowersトップページのメニューの検証です。 -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>DDTFlowers</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- コース案内のCSSファイルを読み込む。 -->
+			<link href="css/courseguide.css" rel="stylesheet" type="text/css">
+			<!-- ブログのCSSを読み込む。 -->
+			<link href="css/blog.css" rel="stylesheet" type="text/css">
+			<script>
+				creator.getJsonFile('source/voice.json');			// 生徒さんの声のJSONを取得する。
+				creator.getJsonFile('source/voicestudents.json');	// 生徒さんの声の記事のJSONを取得する。
+				creator.getJsonFile('source/commonJson.json');		// 共通のパーツのJSONを取得する。
+				creator.getDomFile('source/template.html');			// ページのパーツのテンプレートhtmlを取得する。
+				creator.outputTag('headImage', 'createImage');		// 天の画像を作る
+				creator.outputTag('pageTitle');						// タイトル領域を作る
+				//お客さんの声の内容を追加する。
+				outputKeyNumberObject(creator.json, 'blogArticle', '.main');
+				creator.outputTag('footImage', 'createImage');		// 地の画像を作る
+				creator.outputTag('footer');						// フッターを作る
+				
+				// メイン領域にヘッダーの高さ分のmarginを設定し、固定スクロール時に埋もれるのを阻止する。
+				fixYCoordinate('header', '.main');
+				// position:fixed;を設定したヘッダーが横スクロールしない問題を解決する関数をコールする。
+				fixXCoordinateOnScroll('header')
+			</script>
+		</div>
+	</div>
+</body>
+</html>

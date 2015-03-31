@@ -1,0 +1,11 @@
+{
+	"user":{
+		"password":"user"
+	},
+	"admin":{
+		"password":"admin"
+	},
+	"root":{
+		"password":"root"
+	}
+}

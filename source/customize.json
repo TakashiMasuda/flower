@@ -1,0 +1,205 @@
+{
+    "contentManagement": {
+        "class": "contentManagement tabContainer"
+    },
+    "customizePanels": {
+        "class": "panelContainer editContent",
+        "preserved": {
+            "class": "preserved tabPanel",
+            "id": "preserved",
+            "pageTitleImage": {
+                "class": "pageTitleImage keyAndValue",
+                "keys": {
+                    "pageTitle": {
+                        "class": "pageTitle key",
+                        "text": "pageTitle"
+                    },
+                    "image": {
+                        "class": "image key currentKey",
+                        "text": "image"
+                    }
+                },
+                "values": {
+                    "src": {
+                        "class": "value src",
+                        "valueLabel": {
+                            "text": "src"
+                        },
+                        "editValue": {
+                            "value": "image/icon(tulip).png"
+                        },
+                        "setSrc": {
+                            "type": "file"
+                        },
+                        "setSrcButton": {
+                            "text": "選択"
+                        }
+                    },
+                    "id": {
+                        "class": "value id",
+                        "valueLabel": {
+                            "text": "id"
+                        },
+                        "editValue": {
+                            "value": "titleImage"
+                        }
+                    }
+                }
+            },
+            "pageTitleTitle": {
+                "class": "pageTitleTitle keyAndValue",
+                "keys": {
+                    "pageTitle": {
+                        "class": "pageTitle key",
+                        "text": "pageTitle"
+                    },
+                    "title": {
+                        "class": "title key currentKey",
+                        "text": "title"
+                    }
+                },
+                "values": {
+                    "value": {
+                        "valueLabel": {
+                            "text": "text"
+                        },
+                        "editValue": {
+                            "value": "プリザーブドフラワーアレンジメントコース"
+                        }
+                    }
+                }
+            },
+            "pageTitleSummary": {
+                "class": "pageTitleSummary keyAndValue",
+                "keys": {
+                    "pageTitle": {
+                        "class": "pageTitle key",
+                        "text": "pageTitle"
+                    },
+                    "summary": {
+                        "class": "summary key currentKey",
+                        "text": "summary"
+                    }
+                },
+                "values": {
+                    "value": {
+                        "valueLabel": {
+                            "text": "text"
+                        },
+                        "editValue": {
+                            "value": "プリザーブドフラワーはお手入れ不要、数年間綺麗な状態で楽しむこと出来ます。この事からウェディングブーケを前もって準備出来たり、使用後作りかえることも簡単で、高価なプリザも結果的には経済的だったりします。また生花には不可能な形や、写真立てやバックに付けることも出来てアイデアは無限に広がります。お店で買えば高価なプリザも自分で作ればリーズナブル。お友達へのギフトにも最適です！"
+                        }
+                    }
+                }
+            }
+        },
+        "fresh": {
+            "class": "fresh tabPanel",
+            "id": "fresh"
+        },
+        "nfd": {
+            "class": "nfd tabPanel",
+            "id": "nfd"
+        },
+        "national": {
+            "class": "national tabPanel",
+            "id": "national"
+        },
+        "bridal": {
+            "class": "bridal tabPanel",
+            "id": "bridal"
+        },
+        "franchise": {
+            "class": "franchise tabPanel",
+            "id": "franchise"
+        },
+        "gallery": {
+            "class": "gallery tabPanel",
+            "id": "gallery"
+        },
+        "contact": {
+            "class": "contact tabPanel",
+            "id": "contact"
+        },
+        "access": {
+            "class": "access tabPanel",
+            "id": "access"
+        },
+        "experience": {
+            "class": "experience tabPanel",
+            "id": "experience"
+        },
+        "blog": {
+            "class": "blog tabPanel",
+            "id": "blog"
+        }
+    },
+    "customizeTabs": {
+        "preservedButton": {
+            "preservedLink": {
+                "href": "#preserved",
+                "text": "preserved"
+            }
+        },
+        "freshButton": {
+            "freshLink": {
+                "href": "#fresh",
+                "text": "fresh"
+            }
+        },
+        "nfdButton": {
+            "nfdLink": {
+                "href": "#nfd",
+                "text": "nfd"
+            }
+        },
+        "nationalButton": {
+            "nationalLink": {
+                "href": "#national",
+                "text": "national"
+            }
+        },
+        "bridalButton": {
+            "bridalLink": {
+                "href": "#bridal",
+                "text": "bridal"
+            }
+        },
+        "franchiseButton": {
+            "franchiseLink": {
+                "href": "#franchise",
+                "text": "franchise"
+            }
+        },
+        "galleryButton": {
+            "galleryLink": {
+                "href": "#gallery",
+                "text": "gallery"
+            }
+        },
+        "contactButton": {
+            "contactLink": {
+                "href": "#contact",
+                "text": "contact"
+            }
+        },
+        "accessButton": {
+            "accessLink": {
+                "href": "#access",
+                "text": "access"
+            }
+        },
+        "experienceButton": {
+            "experienceLink": {
+                "href": "#experience",
+                "text": "experience"
+            }
+        },
+        "blogButton": {
+            "blogLink": {
+                "href": "#blog",
+                "text": "blog"
+            }
+        }
+    }
+}

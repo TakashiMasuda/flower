@@ -1,0 +1,119 @@
+{
+    "titleSearch": {
+        "articleSearchLabel": {
+            "text": "キャンペーン名"
+        },
+        "articleSearchTextBox": {
+            "type": "text",
+            "name": "titleSearch"
+        }
+    },
+    "startDateSearch": {
+        "articleSearchLabel": {
+            "text": "開始日"
+        },
+        "articleSearchTextBox": {
+            "type": "text",
+            "name": "startDateSearch",
+            "class": "articleSearchTextBox calendar"
+        }
+    },
+    "endDateSearch": {
+        "articleSearchLabel": {
+            "text": "終了日"
+        },
+        "articleSearchTextBox": {
+            "type": "text",
+            "name": "endDateSearch",
+            "class": "articleSearchTextBox calendar"
+        }
+    },
+    "campaignListHeadWrap": {
+        "class": "recordWrapper",
+        "campaignListHead": {
+        "class":"campaignListHead tableHead",
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "titleHead": {
+                "text": "キャンペーン名"
+            },
+            "startDateHead": {
+                "text": "開始日"
+            },
+            "endDateHead": {
+                "text": "終了日"
+            }
+        }
+    },
+    "listEditButtons": {
+        "createNew": {
+            "text": "作成",
+            "href": "createcampaign.html"
+        },
+        "edit": {
+            "text": "編集",
+            "href": "createcampaign.html"
+        },
+        "delete":{
+        	"text":"削除"
+        }
+    },
+    "campaignTitle": {
+        "campaignLabel": {
+            "text": "キャンペーン名"
+        },
+        "campaignTitleTextBox": {
+            "type": "text",
+            "name": "campaignTitle",
+            "value": ""
+        }
+    },
+    "campaignDates": {
+        "campaignLabelInline1": {
+        	"class":"campaignLabelInline",
+            "text": "開始日"
+        },
+        "campaignStartDate": {
+            "type": "text",
+            "name": "startDate",
+            "value": "",
+            "class": "campaignStartDate calendar"
+        },
+        "campaignLabelInline2": {
+        	"class":"campaignLabelInline",
+            "text": "終了日"
+        },
+        "campaignEndDate": {
+            "type": "text",
+            "name": "endDate",
+            "value": "",
+            "class": "campaignEndDate calendar"
+        }
+    },
+    "campaignMaxEntry": {
+        "campaignLabel": {
+            "text": "上限人数"
+        },
+        "campaignMaxEntryTextBox": {
+            "type": "text",
+            "name": "maxEntry",
+            "value": "8"
+        },
+        "campaignLabelInline": {
+            "text": "人"
+        }
+    },
+    "confirmEditCampaign": {
+        "confirmEditCampaignButton": {
+            "text": "確定",
+            "href": "campaignmanagement.html"
+        },
+        "cancelEditCampaignButton": {
+            "text": "戻る",
+            "href": "campaignmanagement.html"
+        }
+    }
+}

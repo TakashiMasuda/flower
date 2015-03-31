@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/管理者画面</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<script>
+				creator.getJsonFile('source/admin.json');				// 管理者画面のJSONを取得する。
+				//管理者ブログ管理のJSONを読み込む。
+				creator.getJsonFile('source/studentmanagement.json');
+				creator.getJsonFile('source/studentlist.json');
+			
+				// 生徒さんの登録情報一覧を作る。
+				creator.outputTag('contentSearch', 'contentSearch', '#studentManagement');
+				//氏名検索を作る。
+				creator.outputTag('nameSearch', 'articleSearch', '#studentManagement .contentSearch');
+				//メールアドレスでの検索ボックスを作る。
+				creator.outputTag('emailSearch', 'articleSearch', '#studentManagement .contentSearch');
+				//電話番号での検索ボックスを作る。
+				creator.outputTag('telSearch', 'articleSearch', '#studentManagement .contentSearch');
+				//表形式のリストの外枠を作る。
+				creator.outputTag('managementList', 'managementList', '#studentManagement');
+				//一覧の見出しを作る。
+				creator.outputTag('studentListHeadWrap', 'studentListHeadWrap', '#studentManagement .table');
+				unwrapTable('.studentListHead');
+				//一覧の内容を作る。
+				outputKeyNumberObject(creator.json, 'studentListContentWrap', '#studentManagement .table');
+				//編集ボタン群を作る。
+				creator.outputTag('listEditButtons', 'listEditButtons', '#studentManagement');
+				$('#studentManagement button').button();	//ボタンをリッチなものにする。	
+				//日付入力テキストボックスをクリックするとカレンダーが出る様にする。
+				setCallCalendar('.tabPanel.active input.calendar');
+			</script>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,269 @@
+@CHARSET "UTF-8";
+
+/* 特別レッスン予約のダイアログ */
+
+/* 
+ * セレクタ:.specialReservedDialog
+ * 概要   :お花の予約ダイアログ。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.06
+ */
+.specialReservedDialog{
+    font-size: 14px;
+    text-align: left;
+}
+
+/* 
+ * セレクタ:.reservedSummary
+ * 概要   :予約希望についての概要(注意書き)。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.06
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.11
+ * 内容   :line-heightを追加
+ */
+.reservedSummary{
+    margin-bottom: 5px; /* 下に5pxのmarginを挿入する。 */
+    text-indent: 1em;   /* インデントを1文字分とる */
+    line-height: 1.3;   /* 行間を1.3行分にする */
+}
+
+/* 
+ * セレクタ:.specialReservedDialog table th
+ * 概要   :お花の予約ダイアログの見出しセル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.06
+ */
+.specialReservedDialog table th{
+    width: 50px;        /* 幅を50pxにする */
+}
+
+/* 
+ * セレクタ:.specialRadioButtonConstruct tr td:nth-child(2n+0)
+ * 概要   :作品選択のテーブルの作品名。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.06
+ */
+.specialRadioButtonConstruct tr td:nth-child(2n+0){
+    width: 80px;        /* 4最大文字が入ることを想定した幅を指定する。 */
+}
+
+/* 
+ * セレクタ:.specialRadioButtonConstruct tr td:nth-child(2n+1)
+ * 概要   :作品選択のテーブルの作品名。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.06
+ */
+.specialRadioButtonConstruct tr td:nth-child(2n+1){
+    width: 20px;        /* ラジオボタン1個が入る幅を指定する。 */
+}
+
+/* 
+ * セレクタ:.specialRadioButtonConstruct, .radioButtonSpecialSchedule, .subInfo
+ * 概要   :希望作品のテーブル。予約日時のテーブル。予備情報。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.06
+ */
+ .specialRadioButtonConstruct, .radioButtonSpecialSchedule, .subInfo{
+    width: inherit;     /* ダイアログの幅を継承する。 */
+}
+
+/* 
+ * セレクタ:.specialReservedConfirmDialog
+ * 概要   :予約希望の送信の確定を行うダイアログ。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.06
+ */
+.specialReservedConfirmDialog{
+    font-size: 14px;
+    text-align: left;
+}
+
+/* 
+ * セレクタ:.specialConfirmSummary tr td:nth-child(1)
+ * 概要   :.specialConfirmSummaryの行の1番目(見出し)のセル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.06
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.09
+ * 内容   :幅を90pxから110pxに変更
+ */
+.specialConfirmSummary tr td:nth-child(1){
+    width: 110px;    /* 確認ダイアログで見出しの幅を110pxにする */
+}
+
+/* 
+ * セレクタ:.specialConfirmSummary tr td:nth-child(2)
+ * 概要   :.specialConfirmSummaryの行の2番目(中身)のセル。
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.09
+ */
+.specialConfirmSummary tr td:nth-child(2){
+    width: 160px;           /* 90pxの幅を取り、見出し分十分な余裕を取る。 */
+    word-break:break-all;   /* 改行の設定をし、レイアウトを崩さないようにする */
+}
+
+/* 
+ * セレクタ:.specialReservedConfirmDialog button
+ * 概要   :予約希望の送信のOKボタン、キャンセルボタン。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.06
+ */
+.specialReservedConfirmDialog button{
+    margin: 5px;    /* 全方向に微小のmarginを挿入する。 */
+}
+
+/* 
+ * セレクタ:.confirmNotice
+ * 概要   :予約希望の送信ダイアログの送信の同意を求める注意書き。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.09
+ */
+.confirmNotice{
+    margin-bottom: 5px; /* 下の入力内容一覧との間に間隔を取る。 */
+}
+
+/* 
+ * セレクタ:.radioButtonSpecialConstruct, .radioButtonSpecialSchedule, .subInfo
+ * 概要   :ダイアログのコンテンツ部分のスタイル。
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.02.27
+ */
+.radioButtonSpecialConstruct, .radioButtonSpecialSchedule, .subInfo,.personInformation {
+    border-top: 1px solid #D0D0AC;  /* 灰色の線を入れる */
+    display: block;                 /* ブロックレベル要素にする */
+    padding: 10px;                  /* 要素の幅を10px広げる */
+    font-size: 15px;                /* フォントのサイズを15pxにする */
+}
+
+/* 
+ * セレクタ:.radioButtonSpecialConstruct tr td:nth-child(even), .radioButtonSpecialSchedule tr td:nth-child(even), .radioButtonSpecialConstruct tr td input, .radioButtonSpecialSchedule tr td input 
+ * 概要   :左側のラジオボタンについてのスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.02.27
+ */
+.radioButtonSpecialConstruct tr td:nth-child(even), .radioButtonSpecialSchedule tr td:nth-child(even), .radioButtonSpecialConstruct tr td input, .radioButtonSpecialSchedule tr td input {
+    padding-left: 5px;  /* 左向きに5px要素を広げる */
+}
+
+/* 
+ * セレクタ:.radioButtonSpecialConstruct tr td
+ * 概要   :作品についてのプリザ2、生花２の設定
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.02.27
+ */
+.radioButtonSpecialConstruct tr td {
+    padding-left: 10px; /* 左向きに10px要素を広げる */
+}
+
+/* 
+ * セレクタ:.radioButtonSpecialConstruct tr td, .radioButtonSpecialSchedule tr td{
+ * 概要   :ラジオボタンについてのスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.02.27
+ */
+.radioButtonSpecialConstruct tr td, .radioButtonSpecialSchedule tr td{
+    padding-top: 3px;   /* 上向きに3px要素を広げる */
+}
+
+/* 
+ * セレクタ:.personTextbox
+ * 概要   :ダイアログ上部のテキストボックスのスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.06
+ */
+.personTextbox {
+    margin-left: 2em;       /* 二も自分左から余白を空ける */
+}
+/* 
+ * セレクタ:.buttonTopText
+ * 概要   :ダイアログ上部のラベルのスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.06
+ */
+.buttonTopText {
+    vertical-align: middle;     /* 中央に揃える */
+}
+
+/* 
+ * セレクタ:.dialigContentHead
+ * 概要   :予備情報のコンテンツタイトル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.06
+ */
+
+.dialogContentHead {
+    font-weight: bold;      /* 太字にする */
+}
+
+/* 
+ * セレクタ:.canDayAll, .weekOfDay, .canWeekAll, .monthOfWeek
+ * 概要   :予備情報の2行目以降のスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.06
+ */
+.canDayAll, .weekOfDay, .canWeekAll, .monthOfWeek, .textboxLabel {
+    font-size: 12px;        /* フォントサイズ12pxにする */
+    padding-left: .5em;      /* 左から1文字分余白を空ける */
+    padding-top: 2px;       /* 2px上向きに余白をとる */
+}
+
+/* 
+ * セレクタ:.canDayAll, .weekOfDay, .canWeekAll, .monthOfWeek
+ * 概要   :予備情報の2行目以降のスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.06
+ */
+.canDayAll label {
+    padding-left: .5em;     /* 左から余白を半文字分とる */
+}
+
+/* 
+ * セレクタ:.canWeekAll
+ * 概要   :可能週の行のスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.06
+ */
+.canWeekAll {
+    margin-top: 5px;    /* 上向きに余白をとる */
+}
+
+/* 
+ * セレクタ:.canWeekAll label
+ * 概要   :可能週の行のスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.06
+ */
+.canWeekAll label {
+    padding-left: 1.5em;    /* 上向きに余白をとる */
+}
+
+/* 
+ * セレクタ:.weekOfDay label input
+ * 概要   :可能曜日のスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.10
+ */
+.weekOfDay label input {
+    margin-left: 20px;      /* 20px左に余白を空ける */
+}
+
+/* 
+ * セレクタ:monthOfWeek label input
+ * 概要   :可能曜日のスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.10
+ */
+.monthOfWeek label input {
+    margin-left: 10px;      /* 10px左に余白を空ける */
+}
+
+/* 
+ * セレクタ:.weekOfDay, .monthOfWeek
+ * 概要   :可能曜日のスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.10
+ */
+.weekOfDay, .monthOfWeek {
+    line-height: 2;         /* 1行の行間を2行分にする */
+}

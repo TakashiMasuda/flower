@@ -1,0 +1,28 @@
+{
+    "loginDialog":{
+        "userNameLabel":{
+            "text": "ユーザ名"
+        },
+        "userName":{
+            "type": "text",
+            "name": "userName"
+        },
+        "passwordLabel":{
+            "text":"パスワード"
+        },
+        "password":{
+            "type": "password",
+            "name": "password"
+        },
+        "toEntryBefore":{
+        	"text":"会員登録がお済みでない方は"
+        },
+        "toEntryPage":{
+        	"text":"こちら",
+        	"href":"#entry.html"
+        },
+        "toEntryAfter":{
+        	"text":"へ"
+        }
+    }
+}

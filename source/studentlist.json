@@ -1,0 +1,116 @@
+{
+    "1": {
+        "class": "recordWrapper",
+        "studentListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "name": {
+                "text": "西島尚子"
+            },
+            "email": {
+                "text": "xxx@yyy.zzz"
+            },
+            "tel": {
+                "text": "000-0000-0000"
+            }
+        }
+    },
+    "2": {
+        "class": "recordWrapper",
+        "studentListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "name": {
+                "text": "三崎亮子"
+            },
+            "email": {
+                "text": "xxx@yyy.zzz"
+            },
+            "tel": {
+                "text": "000-0000-0000"
+            }
+        }
+    },
+    "3": {
+        "class": "recordWrapper",
+        "studentListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "name": {
+                "text": "佐伯玲子"
+            },
+            "email": {
+                "text": "xxx@yyy.zzz"
+            },
+            "tel": {
+                "text": "000-0000-0000"
+            }
+        }
+    },
+    "4": {
+        "class": "recordWrapper",
+        "studentListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "name": {
+                "text": "速水晶良"
+            },
+            "email": {
+                "text": "xxx@yyy.zzz"
+            },
+            "tel": {
+                "text": "000-0000-0000"
+            }
+        }
+    },
+    "5": {
+        "class": "recordWrapper",
+        "studentListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "name": {
+                "text": "黒川美玲"
+            },
+            "email": {
+                "text": "xxx@yyy.zzz"
+            },
+            "tel": {
+                "text": "000-0000-0000"
+            }
+        }
+    },
+    "6": {
+        "class": "recordWrapper",
+        "studentListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "name": {
+                "text": "天城亜衣"
+            },
+            "email": {
+                "text": "xxx@yyy.zzz"
+            },
+            "tel": {
+                "text": "000-0000-0000"
+            }
+        }
+    }
+}

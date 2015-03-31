@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/プリザーブドフラワー</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- コース案内のCSSファイルを読み込む。 -->
+			<link href="css/courseguide.css" rel="stylesheet" type="text/css">
+			<!-- ブログのCSSファイルを読み込む。 -->
+			<link href="css/blog.css" rel="stylesheet" type="text/css">
+			<script>
+				creator.getJsonFile('source/blog.json');		// ファイルのデータをjsonを用いて持ってくる
+				creator.getJsonFile('source/commonJson.json');	// ファイルのデータをjsonを用いて持ってくる
+				creator.getJsonFile('source/blogcontent.json');	// テスト用のブログJSONデータを取得する。
+				creator.getDomFile('source/template.html');		// ファイルのhtmlデータをdomを用いて持ってくる
+			
+				creator.outputTag('headImage', 'createImage');				// 天の画像を作る
+				creator.outputTag('pageTitle');								// タイトル領域を作る
+				
+				creator.outputTag('blogRightContent');						// 右側領域を作る
+				creator.outputTag('blog','blog','.blogRightContent');		// 右側領域にブログ領域を作る
+				// ナンバリング領域を作る
+				creator.outputTag('numberingOuter','numberingOuter','.blogRightContent');
+				
+				creator.outputTag('blogLeftContent');						// 左側領域を作る
+				creator.outputTag('calendar','calendar','.blogLeftContent');	// 左側領域にカレンダーを作る
+				// 左側領域に最新記事一覧を作る
+				creator.outputTag('currentArticleList','currentArticleList','.blogLeftContent');
+			
+				//@mod 2015.03.13 T.Masuda blogコンテンツを作成する記述を追加しました。
+				creator.outputNumberingTag('blogArticle', 1,4,1);	// ブログの記事を作る。
+				creator.outputTag('footImage', 'createImage');		// 地の画像を作る
+				creator.outputTag('footer');						// フッターを作る
+				
+				// メイン領域にヘッダーの高さ分のmarginを設定し、固定スクロール時に埋もれるのを阻止する。
+				fixYCoordinate('header', '.main');
+				// position:fixed;を設定したヘッダーが横スクロールしない問題を解決する関数をコールする。
+				fixXCoordinateOnScroll('header')
+				//datepickerによるカレンダーを作成する。
+				createCalendar('.calendar');
+			</script>
+		</div>	
+	</div>
+</body>
+</html>

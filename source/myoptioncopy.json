@@ -1,0 +1,13 @@
+{
+    "myOptionBlogTitle": {
+        "class": "myOptionText",
+        "myOptionLabel": {
+            "text": "ブログタイトル"
+        },
+        "myOptionTextbox": {
+            "type": "text",
+            "name": "blogTitle",
+            "value": ""
+        }
+	}
+}

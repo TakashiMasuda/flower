@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers</title>
+
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- コース案内のCSSファイルを読み込む。 -->
+			<link href="css/courseguide.css" rel="stylesheet" type="text/css">
+			<!-- 体験レッスンページのCSSファイルを読み込む。 -->
+			<link href="css/experience.css" rel="stylesheet" type="text/css">
+			<!-- 予約ダイアログのCSSファイルを読み込む。 -->
+			<link href="css/special.css" rel="stylesheet" type="text/css">
+			
+			<!-- jqueryUIの画像のcssを読み込む -->
+			<link type="text/css" href="css/jquery-ui.theme.css" rel="stylesheet">
+			<!-- slickのCSSを読み込む。 -->
+			<link type="text/css" href="css/slick.css" rel="stylesheet">
+			<!-- fancyboxのCSSを読み込む。 -->
+			<link rel="stylesheet" type="text/css" href="js/source/jquery.fancybox.css" media="screen" />
+			<script>
+				creator.getJsonFile('source/experience.json');		// ファイルのデータをjsonを用いて持ってくる
+				creator.getJsonFile('source/commonJson.json');		// ファイルのデータをjsonを用いて持ってくる
+				creator.getDomFile('source/template.html');			// ファイルのhtmlデータをdomを用いて持ってくる
+				creator.outputTag('headImage', 'createImage');		// 天の画像を作る
+				creator.outputTag('pageTitle');						// タイトル領域を作る
+				creator.outputTag('reservedFlow', 'description');	// 予約の流れを作る
+				creator.outputTag('photoGallery');					// ギャラリー画像を作る
+				creator.outputTag('experienceGallery');				//体験レッスン用ギャラリーを作る
+				creator.outputTag('specialGuide');					//体験ガイドを作る
+				creator.outputTag('calendar');						//カレンダーを作る
+				creator.outputTag('commonText', 'itemList');		//共通リストテーブルを作る
+				creator.outputTag('memberRule', 'itemList');		// 会員規約のリストテーブルを作る
+				creator.outputTag('footImage', 'createImage');		// 地の画像を作る
+				creator.outputTag('footer');						// フッターを作る
+				createUnmovableGallery('experienceGallery');		//slickによる動かないギャラリーを作成する。
+				
+				// メイン領域にヘッダーの高さ分のmarginを設定し、固定スクロール時に埋もれるのを阻止する。
+				fixYCoordinate('header', '.main');
+				// position:fixed;を設定したヘッダーが横スクロールしない問題を解決する関数をコールする。
+				fixXCoordinateOnScroll('header');
+				
+				//関数でカレンダーを作る。
+				createReservedCalendar('.calendar');
+				// 全ての曜日のチェックボックスにチェックする
+				allCheckbox('.allDayCheckbox', 'input[name="dayOfWeek"]');
+				// 全ての週のチェックボックスにチェックする
+				allCheckbox('.allWeekCheckbox', 'input[name="week"]');
+			</script>
+		</div>
+	</div>
+</body>
+</html>

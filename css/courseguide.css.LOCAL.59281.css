@@ -1,0 +1,1439 @@
+@CHARSET "UTF-8";
+
+/* 
+ * セレクタ:.pageTitle
+ * 概要   :タイトル領域
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.03
+ */
+.pageTitle{
+    width: 800px;           /* 幅を800pxにする。100%に設定しても無効なので、固定値を使う。 */
+    vertical-align: middle; /* 内包する要素の高さを中心に揃える。 */
+    box-sizing: border-box;     /* サイズの計算にpaddingと枠線を加える。 */
+    margin-bottom: 20px;   /* 下に20pxの余白を空ける */
+    margin-top: 20px;		/* 天の画像と被らないように、上にmarginを挿入する。 */
+}
+
+/* 
+ * セレクタ:.pageTitle img
+ * 概要   :タイトルの画像
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ * 変更者 :T.Masuda
+ * 変更日 :2015.02.24
+ * 内容　 :高さを調整しました。
+ */
+.pageTitle img{
+	width: 100px;			/* 画像サイズに関係なく幅を100pxにする。 */
+	height: auto;			/* 画像の縦横比に応じた高さを取る。 */
+    padding: 0 5px 0 5px;   /* 左右に5pxのpaddingを配置する。 */
+    margin-top: -20px;      /* 上から20px余白を空ける */
+    box-sizing: border-box; /* サイズの計算にpaddingと枠線を加える。 */
+    background: #FFF;       /* 仮の背景色を指定する。 */
+    display: inline-block;  /* 横並びにするためにブロック要素にする */
+    float:left;             /* 左に寄せる。 */
+}
+
+/* 
+ * セレクタ:.pageTitle .title
+ * 概要   :タイトルの文字
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ * 変更者 :T.Masuda
+ * 変更日 :2015.02.24
+ * 内容　 :pageTitleにclearfixを適用したため、上marginを調整しました。
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :font-sizeを28px, marginを0 30px autoにした
+ */
+.pageTitle .title{
+    width:          750px;          /* 余った幅いっぱいに横幅を取る。 */
+    height:         auto;           /* 高さを自動調整する。 */
+    font-size:      11pt;           /* フォントサイズを28pxに指定する。 */
+    box-sizing:     border-box;     /* サイズの計算にpaddingと枠線を加える。 */
+    text-align:     center;         /* 文字を中央に寄せる。 */
+    margin:         0 auto;     /* 中央寄せにし、下marginを挿入する。 */
+    padding-top:    15px;           /* 画像の中心に合わせる。 */
+    font-weight: bold;
+}
+
+/* 
+ * セレクタ:.pageTitle .summary
+ * 概要   :タイトル部分概要。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ * 変更者 :T.Masuda
+ * 変更日 :2015.03.02
+ * 内容 　:paddingと幅を変更しました。
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :幅を700pxにし、marginを0px autoにし、clearを追加
+ 　　　　　　　　padding、height、font-weight、line-height、displayを消去
+ */
+.pageTitle .summary{
+    clear: both;            /* 回り込みをなくす */
+    width:      700px;      /* 幅を660pxに設定する。 */
+    /*padding:  1em;*/      /* 要素の幅を1em広げる */
+    /*height:     auto;*/       /* 高さを自動調整する。 */
+    font-size:  11pt;       /* フォントのサイズを指定する。タイトルより小さめのフォンとサイズにする。 */
+    text-indent: 1em;       /* インデントを1文字分入れる */
+    /*font-weight: normal;*/    /* 文字の太さを通常にする */
+    /*line-height: 1.4;*/       /* 行間を1.4行分とる */
+    padding: 5px 0;
+    margin: 0 auto;         /* 中央に寄せる。 */
+    /*display: inline-block;*/  /* ブロック要素にする */
+}
+
+/* 
+ * セレクタ:.courseGuide
+ * 概要   :コース案内についてのスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.02.09
+ * 変更者 :T.Masuda
+ * 変更日 :2015.02.26
+ * 内容　 :幅を広くしました。
+ */
+.courseGuide {
+    margin: 0 0 20px;  	 					/* 下に20px余白を空ける */
+    width: 56%;    							/* 幅を56%にする */
+    float: left;     					   	/* 左回りに回り込みできるようにする */
+}
+
+/* 
+ * セレクタ:.courseGuide
+ * 概要   :コース案内についてのスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.02.09
+ * 変更者 :T.Masuda
+ * 変更日 :2015.02.26
+ * 内容　 :幅を広くしました。
+ */
+.guideTable {
+}
+
+/* 
+ * セレクタ:.guideTable .summary
+ * 概要   :案内テーブル概要のスタイル
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.26
+ * 追加者 :T.Yamamoto
+    * 追加日 :2015.03.09
+    * 内容   :font-sizeの削除
+ */
+.guideTable .summary {
+ 	background:	rgb(206,220,58);	/* 黄緑の背景を設定する。 */
+	color: #FFF;					/* フォントの色を白にする。 */
+	/*font-size: 16px;*/		/* フォントのサイズを普通にする。 */
+	margin-bottom: 0px;		/* 下marginをなくす。 */
+	padding: 10px 5px;		/* 全方向にpaddingを指定する。 */
+	text-align: center;		/* 文字を中心に揃える。 */
+    font-weight: bold;
+}
+
+/* 
+ * セレクタ:.guideTable td,.guideTable th
+ * 概要   :案内テーブルセルのスタイル
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.26
+ * 追加者 :T.Yamamoto
+    * 追加日 :2015.03.09
+    * 内容   :font-sizeの削除
+ */
+.guideTable td,.guideTable th {
+    padding: 7px;      	/* 幅を10px広げる */
+    /*font-size: 11px;*/		/* フォントのサイズを小さめにする。 */
+    text-align: left;	/* 文字を左に寄せる、 */
+    border: 1px solid #D0D0AC;	/* 黄緑の罫線で区切る。 */
+}
+
+/* 
+ * セレクタ:.guideHead th
+ * 概要   :案内テーブル見出し行のセルのスタイル
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.27
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.09
+ * 内容   :background重複部分の削除
+ * 追加者 :T.Yamamoto
+    * 追加日 :2015.03.09
+    * 内容   :font-sizeの削除
+ */
+.guideHead th{
+	background: #F0F3F5;	/* 背景色を薄い青にする。 */
+	/*background: #F0F3F5;*/	/* 背景色を薄い青にする。 */
+    /*font-size: 13px;*/		/* フォントのサイズをやや小さめにする。 */
+    font-weight: bold;		/* フォントを太字にする。 */
+    text-align: center;		/* 文字を中央に寄せる。 */
+    vertical-align: middle;	/* 高さを中心に合わせる。 */
+}
+
+/* 
+ * セレクタ:.stage,.times,.price
+ * 概要   :コース案内のセルについてのスタイル
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.24
+ */
+.stage,.times,.price {
+}
+
+/* 
+ * セレクタ:.price
+ * 概要   :コース案内の金額セルについてのスタイル
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.24
+ */
+.price {
+	color		: #007698;	/* フォントの色を濃い青にする。 */
+	font-weight	: bold;		/* 太字にする。 */
+}
+
+/* 
+ * セレクタ:.lessonSchedule
+ * 概要   :レッスンスケジュール(時間割)についてのスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.02.09
+ * 変更者 :T.Masuda
+ * 変更日 :2015.02.26
+ * 内容　 :幅を広くしました。
+ */
+.lessonSchedule {
+    margin: 0 0 5px;   /* 下に余白を5pxとる */
+    width:  42%;        /* レッスンスケジュールテーブル全体の幅を42%にする */
+    float: right;       /* 右回りに回り込みする */
+}
+
+/* 
+ * セレクタ:.lessonSchedule .summary
+ * 概要   :レッスンスケジュールの概要についてのスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.02.09
+ * 変更者 :T.Masuda
+ * 変更日 :2015.02.24
+ * 内容　 :下のmarginを減らしました。
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.09
+ * 内容   :全削除
+
+ */
+/*.lessonSchedule .summary {*/
+	/*text-align: center;*/		/* 中央揃えにする */
+/*}*/
+
+/* 
+ * セレクタ:.lessonSchedule th, .lessonSchedule td
+ * 概要   :レッスンスケジュールのレコードについてのスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.02.09
+ * 変更者 :T.Masuda
+ * 変更日 :2015.02.24
+ * 内容　 :下のpaddingを減らしました。幅の設定は効かないので消しました。
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.09
+ * 内容   :全削除
+
+ */
+/*.lessonSchedule th, .lessonSchedule td {*/
+    /*border: 1px solid #D0D0AC;*/	/* 黄緑の罫線で区切る。 */
+    /*padding: 10px;*/      	/* 幅を10px広げる */
+/*}*/
+
+/* 
+ * セレクタ:.lessonSchedule .tableHead
+ * 概要   :レッスンスケジュールの曜日のセル
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.24
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.09
+ * 内容   :全削除
+
+ */
+/*.lessonSchedule .tableHead {*/
+	/*text-align: center;*/	/* 文字を中心に寄せる。 */
+	/*font-size: 13px;*/	/* フォントサイズをこのテーブル内の中間にする */
+	/*font-weight: bold;*/	/* 太字にする。 */
+	/*background: #F0F3F5;*/	/* 背景色を薄い青にする。 */
+/*}*/
+
+/* 
+ * セレクタ:.lessonSchedule .period
+ * 概要   :レッスンスケジュールの時限のセル
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.24
+ * 追加者 :T.Yamamoto
+    * 追加日 :2015.03.09
+    * 内容   :font-sizeの削除
+ */
+.lessonSchedule .period {
+	text-align: left;	/* 文字を左に寄せる。 */
+	/*font-size: 11px;*/	/* フォントサイズをこのテーブル内の最小にする */
+}
+
+/* 
+ * セレクタ:.lessonSchedule .hour
+ * 概要   :レッスンスケジュールの時間のセル
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.24
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.09
+ * 内容   :全削除
+
+ */
+/*.lessonSchedule .hour {*/
+	/*text-align: left;*/	/* 文字を左に寄せる。 */
+	/*font-size: 11px;*/	/* フォントサイズをこのテーブル内の最小にする */
+/*}*/
+
+/* 
+ * セレクタ:.salesPoint 
+ * 概要   :特徴についてのスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.02.09
+ * 変更者 :T.Masuda
+ * 変更日 :2015.02.22
+ * 内容　 :幅の記述を削除しました。
+ * 変更者 :T.Masuda
+ * 変更日 :2015.02.26
+ * 内容　 :marginを下だけにしました。
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.09
+ * 内容   :全削除
+
+ */
+/*.salesPoint {*/
+	/*margin-bottom: 10px;*/	/* 下のmarginを指定する。 */
+/*}*/
+
+/* 
+ * セレクタ:.memberRule
+ * 概要   :会員規約についてそれぞれの項目のスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.02.09
+ * 変更者 :T.Masuda
+ * 変更日 :2015.02.26
+ * 内容　 :marginを減らしました。
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.09
+ * 内容   :全削除
+
+ */
+/*.memberRule {*/
+    /*width: 780px;*/    		/* 幅を780pxにする */
+    /*margin-bottom: 5px;*/	/* 下marginを5pxにする。 */
+/*}*/
+
+/* 
+ * セレクタ:.commonText, .salesPoint, .memberRule
+ * 概要   :箇条書きのスタイル
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.26
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.08
+ * 内容   :全削除
+ */
+/*.commonText, .salesPoint, .memberRule{*/
+	/*width: 100%;*/				/* 幅をmain一杯に広げる。 */
+/*}*/
+
+/* 
+ * セレクタ:.commonText 
+ * 概要   :特徴についてのスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.02.09
+ * 変更者 :T.Masuda
+ * 変更日 :2015.02.22
+ * 内容　 :幅の記述を削除しました。
+ * 変更者 :T.Masuda
+ * 変更日 :2015.02.24
+ * 内容　 :marginを変更しました。。
+ * 変更者 :T.Masuda
+ * 変更日 :2015.02.26
+ * 内容　 :marginを下だけにし、clearの値を変えました。
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.08
+ * 内容   :セレクターを.itemListに変更、widthの追加
+ */
+.itemList {
+    clear: both;            /* 回り込みをなくす */
+    margin-bottom: 10px;    /* 下にmarginを指定する。 */
+    width: 100%;            /* 幅を100%にする */
+}
+
+/* 
+ * セレクタ:.commonText .listHead, .salesPoint .listHead, .memberRule .listHead
+ * 概要   :箇条書きの概要のスタイル
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.25
+ * 変更者 :T.Masuda
+ * 変更日 :2015.02.26
+ * 内容　 :ご入会メリット追加
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.08
+ * 内容   :セレクターを.itemList .listTitleに変更
+ * 追加者 :T.Yamamoto
+    * 追加日 :2015.03.09
+    * 内容   :font-sizeの削除
+ */
+.itemList .listTitle {
+    /*font-size: 18px;*/    			/* 文字のサイズを18pxにする */
+    font-weight: bold;				/* 太字にする。 */
+    text-align: left;  				/* 文字を左寄せにする */
+    margin-bottom: 5px;				/* 下方向に余白を5pxとる */
+    padding-bottom: 6px;			/* 下線との間に余白を文字1/3とる */
+    border-bottom: 1px solid #666;	/* 下線を引く */
+}
+
+/* 
+ * セレクタ:.commonText td, .salesPoint td, .memberRule td
+ * 概要   :リスト項目ついてのスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.02.09
+ * 変更者 :T.Masuda
+ * 変更日 :2015.02.24
+ * 内容　 :paddingを狭めました。字下げも増やしました。
+ * 変更者 :T.Masuda
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.08
+ * 内容   :セレクターを.itemList .listContent に変更、フォントサイズの削除
+ */
+.itemList .listContent{
+    padding: 3px 0;             /* 上下に3pxの余白をとる */
+    /*font-size: 13px;*/            /* フォントのサイズを13pxにする */
+    line-height: 16px;          /* 行の高さを多めに取る。 */
+    padding-left: 2.5em;        /* 頭をキャプションの2文字目に合わせる。 */
+    text-indent: -1em;          /* 先頭の文字を1文字分左にずらす。 */
+}
+
+/* セレクター：.commonText td:before, .salesPoint td:before, .memberRule td:before
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.08
+ * 内容   :セレクターを.itemList .listContent:beforeに変更
+ * 追加者 :T.Yamamoto
+    * 追加日 :2015.03.09
+    * 内容   :font-sizeの削除
+ */
+.itemList .listContent:before {
+	content: "●";
+	/*font-size: 12px;*/
+}
+
+/* セレクター：.commonText td:before, .salesPoint td:before, .memberRule td:before
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.08
+ * 内容   :セレクターを.itemList .listContent:nth-last-of-type(1):beforeに変更
+ * 追加者 :T.Yamamoto
+    * 追加日 :2015.03.09
+    * 内容   :font-sizeの削除
+ */
+.memberRule .listContent:nth-last-of-type(1):before {
+	content: "＊";
+	/*font-size: 14px;*/
+}
+
+/* 
+ * セレクタ:.merit
+ * 概要   :ご入会メリット
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.26
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :セレクターを.dscriptionに変更,margin-bottomの削除
+ */
+.description {
+	clear: both;				/* 回り込みの対象にしない。 */
+	/*margin-bottom: 10px;*/		/* コンテンツの後に間隔を取る */
+	margin-top: 60px;			/* 上のmarginを挿入する。子要素をずらした分を考慮した値を指定する。 */
+}
+/* 
+ * セレクタ:.merit > *
+ * 概要   :ご入会メリットのタグ直下の全要素。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.26
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :全削除
+ */
+/*.merit > *,.reservedFlow > *, .examination > * {*/
+	/*position: relative;*/	/* 座標をずらしてレイアウトを作るためにこの設定をまず行う。 */
+	/*top: -13px;*/			/* 対象の要素を上にずらす。 */
+/*}*/
+
+/* 
+ * セレクタ:.merit .meritTitle
+ * 概要   :ご入会メリットのタイトル部分
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.26
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :セレクターをcontentsTitkleBackに変更し、margin,topプロパティを削除
+ */
+ .contentsTitleBack{
+	clear: both;					/* 回り込みをなくす */
+	text-align: left;				/* 左にそろえる */
+	height: 35px;					/* 帯の高さ */
+	/*top: 0px;*/						/* 上にずらさない */
+	/*margin-bottom: 28px;*/			/* 下に適切なmarginを挿入する */
+	background: rgb(206,220,58);	/* 背景を黄緑色にする。 */
+}
+
+/* 
+ * セレクタ:.merit > *
+ * 概要   :ご入会メリットのタイトル内の要素
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.26
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :全削除
+ */
+/*.merit .meritTitle > *, .reservedFlow .reservedFlowTitle > *, .examination .examinationTitle > *{*/
+	/*position: relative;*/		/* 座標をずらすためにこの設定をする。 */
+	/*top: -47px;*/				/* 上にずらす。 */
+/*}*/
+
+
+
+/* 
+ * セレクタ:.contentdTitle
+ * 概要   :ご入会メリットのタイトルのテキスト。
+ * 作成日 :2015.03.05
+ * 作成者 :T.Masuda
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :margin-leftを追加
+ * 追加者 :T.Yamamoto
+    * 追加日 :2015.03.09
+    * 内容   :font-weight:bold;追加
+ */
+.contentsTitle{
+    margin-left: 5px;       /* 左から5pxの余白をとる */
+    position: relative;     /* 相対位置にする */
+    bottom: 47px;           /* 下から45px上にあげる */
+    font-weight: bold;
+}
+
+/* 
+ * セレクタ:.merit .meritTitleText
+ * 概要   :ご入会メリットのタイトルのテキスト。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.25
+ * 追加者 :T.Yamamoto
+ * 内容   :セレクターをcontentsTitleTextに変更し、vartical-alignを削除し、
+ 　　　　　　　　top:-58px;をbottom:10px;にした
+ * 追加者 :T.Yamamoto
+    * 追加日 :2015.03.09
+    * 内容   :font-sizeの削除
+ */
+.contentsTitleText {
+	color: #FFF;				/* 白抜き文字にする。 */
+	/*vertical-align: bottom;*/	/* 高さを中心に合わせる。 */
+	/*font-size: 12pt;*/			/* フォントサイズを18pxに設定する。 */
+	/*vertical-align: middle;*/	/* 高さを中心揃えにする */
+	position: relative;			/* 相対位置指定をする */
+	bottom: 10px;				/* 位置を上にずらす。 */
+    margin-right: 3px;          /* 右に3pxの余白をとる */
+}
+
+/* 
+ * セレクタ:.merit .meritImgLeft
+ * 概要   :ご入会メリットのタイトルの左側の画像。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.27
+ */
+.merit .meritImgLeft {
+}
+
+/* 
+ * セレクタ:.merit .meritImgRight
+ * 概要   :ご入会メリットのタイトルの右側の画像。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.25
+ */
+.merit .meritImgRight{
+}
+
+/* 
+ * セレクタ:.merit .meritImageToExperience
+ * 概要   :ご入会メリットの体験レッスンリンク画像。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.26
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :セレクター名を .description .meritToExperienceに変更
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.06
+ * 内容   :widthとheightの消去
+ */
+ .description .meritToExperience {
+	float: right;			/* 右に寄せる。 */
+	top: -25px;				/* 上にずらす。 */		
+	margin-right: 1px;		/* 右にmarginを挿入する。 */
+	margin-left: 5px;		/* 左にmarginを挿入する。文字との間に間隔を取る。 */
+	display: block;			/* ブロック要素にして中の画像のサイズを認識する。 */
+	/*width: 107px;*/			/* 画像サイズに合わせる */
+	/*height: 123px;*/			/* 画像サイズに合わせる */
+	z-index: 2;				/* 重なりを上にする。 */
+}
+
+/* 
+ * セレクタ:.merit .meritImageToExperience:hover
+ * 概要   :ご入会メリットの体験レッスンリンク画像にマウスを重ねたときの処理。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.26
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :セレクター名を  .description .meritToExperience:hoverに変更
+ */
+ .description .meritToExperience:hover {
+ 	opacity: 0.5;	/* 透過する。 */
+}
+
+/* 
+ * セレクタ:.merit dt,.merit dd
+ * 概要   :ご入会メリット、各項目
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.26
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :セレクターを.contentsBorder, .contentsBorderInTextに変更
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.08
+ * 内容   :セレクターを.description dt, .description ddに変更
+ */
+.description dt, .description dd{
+    padding: 4px 0em;	/* 適切に間隔を取る */
+}
+
+/* 
+ * セレクタ:.merit dt
+ * 概要   :ご入会メリット、各項目見出し
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.26
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :セレクターを.contentsBorderに変更
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.08
+ * 内容   :セレクターを.description dt, .contentsBorderに変更
+ * 追加者 :T.Yamamoto
+    * 追加日 :2015.03.09
+    * 内容   :font-sizeの削除
+ */
+.description dt, .contentsBorder {
+/*    font-size: 15px;*/    					/* 文字のサイズを15pxにする */
+    padding-left: 0.7em;					/* 適切にインデントをつける。 */
+    font-weight: bold;						/* 太字にして勢いをつける。 */
+    margin: 10px 0 3px 0;					/* 下にmarginを入れる */
+    border-left: solid 5px rgb(206,220,58);	/* 頭に緑の傍線をつける。 */
+    background:	#EEE;						/* 背景色をつけて帯をつくる。 */
+}
+
+/* 
+ * セレクタ:.merit dd
+ * 概要   :ご入会メリット、各項目内容
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.26
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :セレクターを.contentsBorderInTextに変更
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.08
+ * 内容   :セレクターを.description dd, .contentsBorderInTextに変更
+ */
+.description dd, .contentsBorderInText {
+    padding-left: 1em;	/* 更にインデントをつける。 */
+}
+
+/* 
+ * セレクタ:.photoGallery
+ * 概要   :コース案内コンテンツ内のフォトギャラリー。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.25
+ */
+.photoGallery{
+	height: 36px;					/* 全体を包むだけの高さを設定する。 */
+	width: 100%;					/* mainに合わせた幅を設定する。 */
+	background: rgb(206,220,58);	/* 黄緑の背景を設定する。 */
+	margin: 55px auto 0px;			/* 座標をずらした分の上marginを設定する。加えて中央に寄せる。 */
+}
+
+/* 
+ * セレクタ:.photoGallery > *
+ * 概要   :フォトギャラリーのタグ直下の全要素。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.25
+ */
+.photoGallery > * {
+	position: relative;	/* 座標をずらしてレイアウトを作るためにこの設定をまず行う。 */
+	top: -50px;			/* 対象の要素を上にずらす。 */
+}
+
+/* 
+ * セレクタ:.photoGallery .galleryTitle
+ * 概要   :フォトギャラリーのタイトル領域。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.25
+ */
+.photoGallery .galleryTitle{
+	width: 100%;			/* 中央寄せにより固定値での幅設定は必要なし。 */
+	margin: 0px auto 6px;		/* 中央に寄せて、下に最低限のmarginを取る。 */
+	font-size: 0px;			/* インライン要素特有の余白を消す。 */
+	text-align: left;		/* 要素を中央に集める。 */
+}
+
+/* 
+ * セレクタ:.photoGallery .galleryTitleText
+ * 概要   :フォトギャラリーのタイトルのテキスト。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.25
+ * 追加者 :T.Yamamoto
+    * 追加日 :2015.03.09
+    * 内容   :font-sizeの削除
+ */
+.photoGallery .galleryTitleText{
+	vertical-align: bottom;		/* 高さを中心に合わせる。 */
+	/*font-size: 22px;*/			/* フォントサイズを22pxに設定する。 */
+	color: #FFF;				/* 白抜き文字にする。 */
+}
+	
+/* 
+ * セレクタ:.photoGallery .galleryImgLeft
+ * 概要   :フォトギャラリーのタイトルの左側の画像。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.25
+ */
+.photoGallery .galleryImgLeft{
+	vertical-align: bottom;		/* 高さを底に合わせる。 */
+	margin: 0 11px 0 26px;		/* 左右にmarginを設定する。左は右の画像との幅合わせ、右は文字との間隔調整となる。 */
+}
+
+/* 
+ * セレクタ:.photoGallery .galleryImgRight
+ * 概要   :フォトギャラリーのタイトルの右側の画像。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.25
+ */
+.photoGallery .galleryImgRight{
+	vertical-align: middle;		/* 高さを中心に合わせる。 */
+	margin: 0 0 0 11px;		/* 左にmarginを設定する。文字との間隔調整となる。 */
+}
+
+/* 
+ * セレクタ:.photoGallery .galleryImgRightFlower
+ * 概要   :フォトギャラリーのタイトルの右側のお花の画像。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.26
+ */
+.photoGallery .galleryImgRightFlower{
+	/* 絶対位置を指定する。これによりタイトルのレイアウトを崩さずに画像が置かれる。 */
+	position: absolute;	
+}
+	
+/* 
+ * セレクタ:.footGallery
+ * 概要   :jQueryプラグイン「Smooth Div Scroll」によるカルーセルとなる要素
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.04
+ * 変更者 :T.Masuda
+ * 変更日 :2015.03.03
+ * 内容　 :Smooth Div Scrollへの対応のため、position relativeを指定しました。
+ */
+.footGallery{
+    width: 800px;       		/* 幅800px */
+    height: 120px;				/* 高さを110pxに指定する。 */
+    margin: 0 auto 20px;		/* 中央に寄せる。下に余白を空ける。 */
+    clear: both;				/* 回り込みを無効にする */
+    border: 1px solid #D0D0AC;	/* 黄緑色の枠線を引く。 */
+    position: relative;			/* 絶対位置を利用する子要素の基準となる。 */
+	box-sizing: border-box;		/* サイズの計算に罫線とpaddingを勘定に入れる。 */
+}
+
+/* 
+ * セレクタ:.footGallery a
+ * 概要   :Smooth Div Scrollによるギャラリーのリンクのタグ。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.03
+ */
+.footGallery a{
+	font-size: 0px;	/* フォントサイズを0にし、インライン要素独自の余白を消す。 */
+}
+
+/* 
+ * セレクタ:.footGallery img
+ * 概要   :カルーセルで表示する画像のサイズを200pxの正方形にする。
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.02.09
+ * 変更者 :T.Yamamoto
+ * 変更日 :2015.02.09
+ * 内容　 :幅を変更しました。
+ * 変更者 :T.Masuda
+ * 変更日 :2015.02.26
+ * 内容　 :高さ、幅を変更しました。
+ */
+.footGallery img{
+    width:  auto;  	/* 幅を自動調整にする */
+    height: 120px;  /* 高さを固定にする */
+}
+
+/* 
+ * セレクタ:.footGallery > div
+ * 概要   :ギャラリー直下のdiv
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.27
+ */
+ .footGallery > div {
+    border-bottom: 1px solid #D0D0AC;    /* 下に黄緑の線を引く。 */
+    
+}
+
+/* smooth div scrollの矢印 */
+#mixedContent .contentBox {
+    position: relative;
+    float: left;
+    display: block;
+    height: 308px;
+    width: 200px;
+    border: solid 1px #ccc;
+    padding: 10px;
+    margin: 0px 5px;
+}
+
+ /* 
+ * セレクタ:.courseGuide .item
+ * 概要   :国家資格ページコース案内のthに関するスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.03
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.06
+ * 内容   :全削除
+ */
+/*.courseGuide .item {*/
+    /*text-align: left; */      /* 文字を左寄りにする */
+/*}*/
+
+/* 
+ * セレクタ:.noneDisplay
+ * 概要   :隠すべき要素のスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.08
+ */
+.noneDisplay {
+    display: none;      /* 要素を隠す */
+}
+
+/* スマホ・タブレットレイアウト */
+@media(max-width:680px){
+
+	/* 
+	 * セレクタ:.pageTitle
+	 * 概要   :タイトル領域
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.24
+	 */
+	.pageTitle{
+	    width: 100%;        /* 可変幅に設定する。 */
+	    margin-top: 0;		/* 上のmarginをなくす。 */
+	}
+
+    /* 
+     * セレクタ:.pageTitle img
+     * 概要   :スマホ用コンテンツのスタイル
+     * 作成者 :T.Yamamoto
+     * 作成日 :2015.02.16
+     * 変更者  :T.Masuda
+     * 変更日  :2015.02.22
+     * 内容　  :幅とmarginを変更。
+     * 変更者  :T.Masuda
+     * 変更日  :2015.02.23
+     * 内容　  :marginを変更。
+     */
+    .pageTitle img {
+        width: 15%;            /* 幅を可変にする */
+        height: auto;          /* 高さを自動調整する */
+        margin: 0 4% 0px 1%;	/* 左右にmarginを配置する。 */
+    }
+
+    /* 
+     * セレクタ   :.pageTitle .title
+     * 概要    :スマホ用タイトル部分h1のスタイル
+     * 作成者  :T.Yamamoto
+     * 作成日  :2015.02.22
+     * 変更者  :T.Masuda
+     * 変更日  :2015.02.22
+     * 内容　  :幅とmarginを変更。
+     * 変更者  :T.Masuda
+     * 変更日  :2015.02.24
+     * 内容　  :paddingを変更。
+     * 追加者 :T.Yamamoto
+    * 追加日 :2015.03.09
+    * 内容   :font-sizeの削除
+     */
+    .pageTitle .title {
+        font-weight: bold;  /* 文字を太くする */
+        /*font-size: 17px;*/    /* フォントサイズ17pxにする */
+        padding: 1% 0 5px;  /* 上下にpaddingを挿入する。 */
+		width: 65%;			/* 幅を可変にする。 */
+		float: none;		/* floatを解除する。 */
+		margin: 2% auto 0;	/* 可変のmarginを挿入する。加えて中央に寄せる。 */
+		display: block;		/* ブロック要素にして中心寄せを有効にする。 */
+    }
+
+    /* 
+     * セレクタ:.pageTitle .summary
+     * 概要  :スマホ用コンテンツのスタイル
+     * 作成者:T.Yamamoto
+     * 作成日:2015.02.16
+     * 変更者  :T.Masuda
+     * 変更日  :2015.02.22
+     * 内容　  :幅とmarginを変更。
+     * 変更者  :T.Masuda
+     * 変更日  :2015.02.23
+     * 内容　  :幅を変更。
+     * 変更者  :T.Masuda
+     * 変更日  :2015.02.24
+     * 内容　  :ブロック要素に変更しました。
+     * 変更者  :T.Masuda
+     * 変更日  :2015.02.26
+     * 内容　  :幅を変更しました。また、marginの記述をなくしました。clear:bothを記述しました。
+     * 追加者 :T.Yamamoto
+    * 追加日 :2015.03.09
+    * 内容   :font-sizeの削除
+     */
+    .pageTitle .summary{
+		width: 90%;			/* 幅を可変にする。 */
+        /*font-size: 11px;*/    /* フォントのサイズを12pxにする */
+   		display: block;  	/* ブロック要素にする */
+   		clear: both;		/* 回り込みをなくす。 */
+    }
+
+    /* 
+     * セレクタ:.courseGuide
+     * 概要   :スマホ用コース案内テーブルのスタイル
+     * 作成者 :T.Yamamoto
+     * 作成日 :2015.02.16
+     * 変更者 :T.Masuda
+     * 変更日 :2015.02.22
+     * 内容　 :table-layoutを記述しました。
+     * 変更者 :T.Masuda
+     * 変更日 :2015.02.24
+     * 内容　 :幅調整とfloatの解除を行いました。中央寄せの設定をしました。下marginを入れました。
+     * 追加者 :T.Yamamoto
+     * 追加日 :2015.03.05
+     * 内容   :table-layoutの削除
+     */
+    .courseGuide {
+        width: 90%;            /* 幅を60pxにする */
+        height: auto;          /* 高さを自動にする */
+        /*table-layout: fixed;*/	/* セルの幅を均等に割る。 */
+        float: none;			/* floatを解除する。 */
+        margin: 0 auto 15px;	/* 中央に寄せる。下にもmarginを追加する。 */
+    }
+
+    /* 
+     * セレクタ:.lessonSchedule
+     * 概要   :スマホ用レッスンスケジュールテーブルのスタイル
+     * 作成者 :T.Yamamoto
+     * 作成日 :2015.02.16
+     * 変更者 :T.Masuda
+     * 変更日 :2015.02.22
+     * 内容　 :margin、幅を変更しました。
+     * 変更者 :T.Masuda
+     * 変更日 :2015.02.24
+     * 内容　 :floatを解除しました。幅を狭めました。中央に寄せるようにしました。
+     */
+    .lessonSchedule {
+        width: 90%;            	/* 幅を90%にする */
+		margin: 0 auto 10px;	/* 中央に寄せる。 */
+    	float: none;			/* 段組みレイアウトを解除する。 */
+    }
+
+    /* 
+     * セレクタ:.commonText, .salesPoint, .memberRule
+     * 概要   :スマホ用リストのスタイル
+     * 作成者 :T.Yamamoto
+     * 作成日 :2015.02.16
+     * 変更者 :T.Masuda
+     * 変更日 :2015.02.21
+     * 内容　 :margin、幅を変更しました。
+     * 変更者 :T.Masuda
+     * 変更日 :2015.02.24
+     * 内容　 :margin、幅を変更しました。
+     * 追加者 :T.Yamamoto
+     * 追加日 :2015.03.08
+    　* 内容   :セレクターをitemListに変更
+     */
+    .itemList {
+        width: 90%;            /* 幅を90%にする */
+        margin: 15px auto;     /* 上に余白を10px、中央に寄せる。 */
+        line-height: 1.5;      /* 1行の高さを1.5行分にする */
+        padding-left: 1em;     /* インデントを一つとる */
+    }
+
+    /* 
+     * セレクタ:.commonText .listHead, .salesPoint .listHead, .memberRule .listHead
+     * 概要   :スマホ用リストのスタイル
+     * 作成者 :T.Yamamoto
+     * 作成日 :2015.02.16
+     * 変更者 :T.Masuda
+     * 変更日 :2015.02.24
+     * 内容　 :text-alignを変更しました。下marginを調整しました。
+     * 追加者 :T.Yamamoto
+     * 追加日 :2015.03.08
+     * 内容   :セレクターを.itemList .listTitleに変更
+     * 追加者 :T.Yamamoto
+    * 追加日 :2015.03.09
+    * 内容   :font-sizeの削除
+     */
+    .itemList .listTitle {
+        /*font-size: 13px;*/        /* 文字サイズを14pxにする */
+        margin-bottom: 8px;		/* 下に8pxのmarginを挿入する。 */
+    }
+
+    /* 
+     * セレクタ:.commonText td, .salesPoint td, .memberRule td
+     * 概要   :スマホ用リストのスタイル
+     * 作成者 :T.Yamamoto
+     * 作成日 :2015.02.16
+     * 変更者 :T.Masuda
+     * 変更日 :2015.02.24
+     * 内容   :インデントの調整をしました。
+     * 追加者 :T.Yamamoto
+     * 追加日 :2015.03.08
+     * 内容   :セレクターを.itemList .listContentに変更
+     * 追加者 :T.Yamamoto
+    * 追加日 :2015.03.09
+    * 内容   :font-sizeの削除
+     */
+    .itemList .listContent {
+        text-align: left;       /* 左寄りにする */
+        /*font-size: 11px;*/        /* 文字サイズを11pxにする */
+        padding-left: 2.5em;	/* インデントを調整する。 */
+    }
+
+/* 
+ * セレクタ:.merit
+ * 概要   :ご入会メリット
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.26
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.03
+ * 内容   :セレクターに.reservedFlow, .examinationを追加
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :セレクターをdescriptionに変更
+ */
+.description {
+	width: 90%;				/* 幅を少し狭めた上で可変にする。 */
+	margin: 0 auto 10px;	/* 中央に寄せる。 */
+}
+
+/* 
+ * セレクタ:.merit dt
+ * 概要   :ご入会メリット、各項目見出し
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.26
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.03
+ * 内容   :セレクターに.reservedFlow dt, .examination dtを追加
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :セレクターをcontentsBorderに変更
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.08
+ * 内容   :セレクターを.description dtに変更
+ * 追加者 :T.Yamamoto
+    * 追加日 :2015.03.09
+    * 内容   :font-sizeの削除
+ */
+.description dt{
+    /*font-size: 12px;*/    			/* 文字のサイズを12pxにする */
+    padding-left: 0.5em;			/* 適切にインデントをつける。 */
+}
+
+/* 
+ * セレクタ:.merit dd
+ * 概要   :ご入会メリット、各項目内容
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.26
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.03
+ * 内容   :セレクターに.reservedFlow dd, .examination ddを追加
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :セレクターを.contentsBorderInTextに変更,マージンとラインハイトの削除
+ 　　　　　　　padding-leftを2.1emから2emに変更
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.06
+ * 内容   :padding-leftを1emに変更
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.08
+ * 内容   :セレクターを.description ddに変更
+ * 追加者 :T.Yamamoto
+    * 追加日 :2015.03.09
+    * 内容   :font-sizeの削除
+ */
+.description dd{
+    /*font-size: 11px;*/    	/* 文字のサイズを11pxにする */
+    /*margin-bottom: 6px;*/		/* 各項目で十分に間を空ける。 */
+    padding-left: 1em;	/* 更にインデントをつける。 */
+	/*line-height: 16px;*/		/* スマホレイアウト時には行間を詰める。 */
+}
+
+/* 
+ * セレクタ:.merit .meritTitle
+ * 概要   :ご入会メリット、タイトル領域
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.26
+ */
+.merit .meritTitle {
+}
+
+/* 
+ * セレクタ:.merit .meritImgLeft
+ * 概要   :ご入会メリット、左の画像
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.26
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.04
+ * 内容   :セレクターに.reservedFlow .reservedFlowImgLeftを追加
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :セレクターを.contentsTitle imgに変更, widthをheight:40px;に変更
+ */
+.contentsTitle img {
+	height: 40px;	/* 画像のサイズを半分にする。 */
+}
+
+/* 
+ * セレクタ:.contentsTitleBack .contentsTitle .contentsImgLeftL
+ * 概要   :青い鳥についてのスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.05
+ */
+.contentsTitleBack .contentsTitle .contentsImgLeftL {
+    height: 25px;   /* 画像のサイズを半分にする。 */
+}
+
+/* 
+ * セレクタ:.merit .meritImgRight
+ * 概要   :ご入会メリット、右の画像
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.26
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.04
+ * 内容   :セレクターに.reservedImgRightを追加
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :全削除
+ */
+/*.merit .meritImgRight, .reservedFlow .reservedFlowImgRight {*/
+	/*width: 50px;*/	/* 画像のサイズを半分にする。 */
+/*}*/
+
+/* 
+ * セレクタ:.photoGallery
+ * 概要   :コース案内コンテンツ内のフォトギャラリー。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.25
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :全削除
+ */
+/*.photoGallery{*/
+	/*width: 90%;	*/			/* 余白を考えた幅に設定する。 */
+	/*margin-top: 0px;	*/	/* 上のmarginをなくす。 */
+/*}*/
+
+/* 
+ * セレクタ:.photoGallery .galleryTitle
+ * 概要   :フォトギャラリーのタイトル領域。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.25
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :全削除
+ */
+/*.photoGallery .galleryTitle{*/
+	/*width: 100%;*/			/* 中央寄せにより固定値での幅設定は必要なし。 */
+/*}*/
+
+/* 
+ * セレクタ:.photoGallery .galleryTitleText
+ * 概要   :フォトギャラリーのタイトルのテキスト。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.25
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :全削除
+ */
+/*.photoGallery .galleryTitleText{*/
+	/*font-size:18px;*/			/* フォントサイズを18pxに設定する。 */
+/*}*/
+	
+/* 
+ * セレクタ:.photoGallery .galleryImgLeft
+ * 概要   :フォトギャラリーのタイトルの左側の画像。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.25
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :全削除
+ */
+/*.photoGallery .galleryImgLeft{*/
+	/*vertical-align: bottom;*/		/* 高さを底に合わせる。 */
+	/*margin: 0 11px 0 26px;*/		/* 左右にmarginを設定する。左は右の画像との幅合わせ、右は文字との間隔調整となる。 */
+	/*width: 22px;*/
+/*}*/
+
+/* 
+ * セレクタ:.photoGallery .galleryImgRight
+ * 概要   :フォトギャラリーのタイトルの右側の画像。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.25
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :全削除
+ */
+/*.photoGallery .galleryImgRight{*/
+	/*vertical-align: middle;*/		/* 高さを中心に合わせる。 */
+	/*margin: 0 0 0 11px;*/		/* 左にmarginを設定する。文字との間隔調整となる。 */
+	/*width: 35px;*/
+/*}*/
+
+/* 
+ * セレクタ:.photoGallery .galleryImgRightFlower
+ * 概要   :フォトギャラリーのタイトルの右側のお花の画像。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.26
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :セレクターを.contentsImgRightRに変更
+ */
+.contentsImgRightR {
+	display: none;	/* iPhoneの画面サイズではこの画像が入るスペースがないため、消しておく。 */
+}
+
+
+/* 
+ * セレクタ:.footGallery
+ * 概要   :jQueryプラグイン「Slick」によるカルーセルとなる要素
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.26
+ */
+.footGallery{
+    width: 90%;       /* 幅をmarginを考慮した値にして取る。 */
+}
+
+/* 
+ * セレクタ:.memberRule
+ * 概要   :会員規約
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.27
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.09
+ * 内容   :全削除
+ */
+/*.memberRule {*/
+	/*margin-bottom: 10px;*/	/* 最下部に来るので、フッターとのmarginを調整する。 */
+/*}*/
+
+/* 
+ * セレクタ:.photoGallery > * 
+ * 概要   :フォトギャラリーの直下要素
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.27
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :削除
+ */
+/*.photoGallery > * {*/
+	/*top: -10px;*/		/* 上にずらす。 */
+/*}*/
+
+/* 
+ * セレクタ:.merit .meritTitle > * 
+ * 概要   :入会メリットのタイトル領域の要素。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.27
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.04
+ * 内容   :セレクターに.reservedFlow .reservedFlowTitle, .examination .examinationTitleを追加
+ */
+/*.merit .meritTitle > *, .reservedFlow .reservedFlowTitle > *, .examination .examinationTitle > * {*/
+	/*position: relative;*/	/* 相対位置要素に指定する */
+	/*top: -7px;*/			/* 上にずらす。 */
+/*}*/
+
+/* 
+ * セレクタ:.merit .meritTitle 
+ * 概要   :入会メリットのタイトル領域。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.27
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.04
+ * 内容   :セレクターに.reservedFlow .reservedFlowTitle , .examination .examinationTitleを追加
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :全削除
+ */
+/*.merit .meritTitle, .reservedFlow .reservedFlowTitle , .examination .examinationTitle{*/
+	/*height: 36px;*/					/* 高さを固定値で指定する。 */
+	/*background: rgb(206,220,58);*/	/* 背景色を黄緑にする。 */
+/*}*/
+
+/* 
+ * セレクタ:.merit .meritTitleText 
+ * 概要   :入会メリットのタイトルのテキスト。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.27
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.04
+ * 内容   :セレクターに.reservedFlow .reservedFlowTitleText, .examination .examinationTitleText を追加
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :セレクターを.contentsTittleTextに変更し、
+ * 追加者 :T.Yamamoto
+    * 追加日 :2015.03.09
+    * 内容   :font-sizeの削除
+ */
+.contentsTitleText {
+	/*font-size: 15px;*/	/* フォントサイズを中くらいに指定する。 */
+	top: -18px;			/* 上にずらす。 */
+}
+
+/* 
+ * セレクタ:.guideTable .summary
+ * 概要   :案内テーブルのタイトル部分。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.27
+ * 追加者 :T.Yamamoto
+    * 追加日 :2015.03.09
+    * 内容   :font-sizeの削除
+ */
+.guideTable .summary {
+	/*font-size: 16px;*/	/* やや大きめのフォントを指定する。 */
+}
+
+/* 
+ * セレクタ:.reservedFlow
+ * 概要   :ご予約までの流れ。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.02
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :全削除
+ */
+/*.reservedFlow {*/
+	/*width: 90%;	*/		/* スマホコンテンツ用の幅にする。 */
+	/*margin-right: auto;*/	/* 右marginをauto */	
+	/*margin-left: auto;*/	/* 左marginもautoにすることで中央に寄せる。 */
+/*}*/
+/* 
+ * セレクタ:.reservedFlowTitle
+ * 概要   :ご予約までの流れのタイトル領域。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.25
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :全削除
+ */
+/*.reservedFlowTitle{*/
+	/*width: 100%;*/			/* 中央寄せにより固定値での幅設定は必要なし。 */
+/*}*/
+
+/* 
+ * セレクタ:.reservedFlowTitleText
+ * 概要   :ご予約までの流れのタイトルのテキスト。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.25
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :全削除
+ */
+/*.reservedFlowTitleText{*/
+	/*font-size:18px;*/				/* フォントサイズを18pxに設定する。 */
+/*}*/
+	
+/* 
+ * セレクタ:.reservedFlowImgLeft
+ * 概要   :ご予約までの流れのタイトルの左側の画像。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.25
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.04
+ * 内容   : marginを消しました
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :全削除
+ */
+/*.reservedFlowImgLeft{*/
+	/*vertical-align: bottom;*/		/* 高さを底に合わせる。 */
+	/*margin: 0 11px 0 26px;	*/	/* 左右にmarginを設定する。左は右の画像との幅合わせ、右は文字との間隔調整となる。 */
+	/*width: 22px;*/
+/*}*/
+
+/* 
+ * セレクタ:.reservedFlowImgRight
+ * 概要   :ご予約までの流れのタイトルの右側の画像。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.25
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.04
+ * 内容   : marginを消しました
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :全削除
+ */
+/*.reservedFlowImgRight{*/
+	/*vertical-align: middle;*/		/* 高さを中心に合わせる。 */
+	/*margin: 0 0 0 11px;*/		/* 左にmarginを設定する。文字との間隔調整となる。 */
+	/*width: 35px;*/
+/*}*/
+
+/* 
+ * セレクタ:.examinationImgLeft
+ * 概要   :スマホ用フラワー国家資格についての左の画像のスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.04
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :全削除
+ */
+/*.examinationImgLeft {*/
+    /*width: 49px;*/       /* 元の幅の半分の幅にする */
+/*}*/
+
+/* 
+ * セレクタ:.examinationImgLeft
+ * 概要   :フラワー国家資格についての左の画像のスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.04
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.05
+ * 内容   :全削除
+ */
+/*.examinationImgRight {*/
+    /*display: none;*/      /* スマホではこの画像は表示しない */
+/*}*/
+
+/* 
+ * セレクタ:.contentsTitle
+ * 概要   :緑の帯に入る領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.05
+ */
+ .contentsTitle{
+    position: relative;     /* 相対位置にする */
+    bottom: 7px;              /* 5px上にずらす */
+ }
+
+
+/* 
+ * セレクタ:.contentsTitleText
+ * 概要   :緑の帯に入るテキスト領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.05
+ */
+ .contentsTitleText{
+    position: relative;     /* 相対位置にする */
+    top: -10px;              /* 5px上にずらす */
+ }
+}

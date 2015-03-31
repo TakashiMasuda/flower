@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/管理者画面</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<script>
+				creator.getJsonFile('source/admin.json');				// 管理者画面のJSONを取得する。
+				creator.getDomFile('source/template.html');		// ファイルのhtmlデータをdomを用いて持ってくる
+		
+			// オプションのコンテンツを作る。
+				creator.outputTag('optionsConfirmChange', 'optionsConfirmChange', '#options');
+				creator.outputTag('optionsMyMail', 'optionsMyMail', '#options');
+				creator.outputTag('optionsAllowMidnightMail', 'optionsAllowMidnightMail', '#options');
+				creator.outputTag('optionsRecieveMailType', 'optionsRecieveMailType', '#options');
+
+				$('#options button').button();	//ボタンをリッチなものにする。	
+			</script>
+		</div>
+	</div>
+</body>
+</html>

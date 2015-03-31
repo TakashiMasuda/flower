@@ -1,0 +1,15 @@
+{
+    "pageTitle": {
+        "class": "pageTitle cf",
+        "image": {
+            "src": "image/icon(fish100).jpg"
+        },
+        "title": {
+            "text": "ギャラリー"
+        },
+        "summary": {
+            "text": ""
+        }
+    },
+    "gallery":{}
+}
