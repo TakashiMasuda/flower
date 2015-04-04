@@ -10,6 +10,7 @@ import java.sql.Statement;
 
 
 
+
 //サーブレットでのエラー用の例外クラスをインポートする。
 import javax.servlet.ServletException;
 //サーブレットのクラス群をインポートする。
@@ -70,12 +71,8 @@ public class LoginServlet extends HttpServlet {
 		
 		//SQLExceptionのtryブロック。
 		try {
-			//DBManagerクラスを利用し、DBへの接続を開始する。
-			Connection con = DBManager.getConnection();
-			//ステートメントを作成する。
-			Statement stmt = con.createStatement();
 			//クエリを実行し、結果セットを取得する。
-			ResultSet rs = stmt.executeQuery(sql);
+			ResultSet rs = DBManager.getResultSet(sql);
 			
 			//レコードが取得できていれば、ユーザの存在チェックを通過する。
 			if(rs != null){
@@ -83,8 +80,6 @@ public class LoginServlet extends HttpServlet {
 				rs.next();
 				//パスワードが合っていれば
 				if(password.equals(rs.getString("password"))){
-					String str1 = rs.getString("password");
-					String str2 = rs.getString("nickname");
 					//ログイン成功となるので、その旨のJSONを作成する。
 					loginresult.append(createLoginResultJSON(1, rs.getString("nickname"), successmessage));
 				//パスワードが間違っていたら

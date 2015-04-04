@@ -558,9 +558,9 @@ function createLoginDialog(){
 			        				 //現在の日付にクッキーの生存時間を加算し、cookieLimitに追加する。
 			        				 cookieLimit.setTime(cookieLimit.getTime() + parseInt(init['cookieLimitTime']));
 			        				 //cookieにユーザIDと期限の日付を格納する。日本語の文字化けを防ぐため、escape関数にかけた上で格納する。
-			        				 document.cookie = 'user=' + userid + ';expires=' + cookieLimit.toGMTString();
+			        				 document.cookie = 'userId=' + userid + ';expires=' + cookieLimit.toGMTString();
 			        				 //同様にユーザ名もクッキーに格納する。日本語の文字化け防止のため、ユーザ名の文字列をescape関数にかける。
-			        				 document.cookie = 'userName=' + escape(transResult["username"]) + ';expires=' + cookieLimit.toGMTString();
+			        				 document.cookie = 'user=' + escape(transResult["username"]) + ';expires=' + cookieLimit.toGMTString();
 			        				 //ここまで変更しました。
 			        				 // ダイアログを消去する。
 						       		 $(this).dialog('close').dialog('destroy').remove();
@@ -623,7 +623,7 @@ function checkLogin(){
 							// ユーザ名のクラスを設定する。
 							.addClass('userName')
 							//cookieからユーザ名を取り出し表示する。
-							.text(cookies['userName'] + '様')
+							.text(cookies['user'] + '様')
 							)
 					// spanタグを追加する。
 					.after($('<span></span>')
@@ -636,8 +636,8 @@ function checkLogin(){
 		// ログアウトのイベントを定義する。
 		$(document).on('click', '.logout', function(){
 			// ユーザのクッキーを削除してログアウトする。
+			deleteCookie('userId');
 			deleteCookie('user');
-			deleteCookie('userName');
 			//画面を更新する。
    		 	location.reload();
 		});
@@ -679,27 +679,6 @@ function deleteCookie(cookieName) {
   document.cookie = cName + ";expires=" + dTime.toGMTString();
 }
 
-/* クッキーを連想配列で取得する関数。http://so-zou.jp/web-app/tech/programming/javascript/cookie/#no5より。 */
-function GetCookies()
-{
-    var result = new Array();
-
-    var allcookies = unescape(document.cookie);
-    if( allcookies != '' )
-    {
-        var cookies = allcookies.split( '; ' );
-
-        for( var i = 0; i < cookies.length; i++ )
-        {
-            var cookie = cookies[ i ].split( '=' );
-
-            // クッキーの名前をキーとして 配列に追加する
-            result[ cookie[ 0 ] ] = decodeURIComponent( cookie[ 1 ] );
-        }
-    }
-    //結果を返す。
-    return result;
-}
 //エラーメッセージの配列。
 var errorMessages = [
 'failed to connect',
@@ -710,66 +689,6 @@ var errorMessages = [
 
 // 初期化用関数をコールして初期化用データの連想配列を用意する。
 var init = getInitData("source/init.json", 100);
-
-/* 
- * 関数名:showEditDialog(editElem)
- * 概要  :テキストを編集するダイアログを表示する。
- * 引数  :Element editElem:編集対象となる要素。
- * 返却値  :なし
- * 作成者:T.M
- * 作成日:2015.03.18
- */
-function showEditDialog(editElem){
-	
-//	//jQuery UIのダイアログを生成する。
-//	$('.textEditDialog').dialog({
-//		// 幅を設定する。
-//		width			: '300px',
-//		// 予約ダイアログのクラスを追加する。
-//		dialogClass		:'reservedDialog',
-//		// ダイアログを生成と同時に開く。
-//		autoOpen		: true,
-//		// Escキーを押してもダイアログが閉じないようにする。
-//		closeOnEscape	: false,
-//		// モーダルダイアログとして生成する。
-//		modal			: true,
-//		// リサイズしない。
-//		resizable		: false, 
-//		// 作成完了時のコールバック関数。
-//		create:function(event, ui){
-//			//ダイアログのテキストエリアのjQueryオブジェクトを生成する。
-//			var textarea = $('textarea', this);
-//			//テキストエリアに連動元の入力要素の内容をコピーする。
-//			textarea.val($(editElem).val());
-//			//テキストエリアと入力要素の内容が連動するようにイベント登録する。
-//			textarea.change(function(){
-//				//editElemの値をtextareaの値で上書きする。
-//				editElem.val(textarea.val());
-//			});
-//		},
-//		// 位置を指定する。
-//		position:{
-//			// ダイアログ自身の位置合わせの基準を、X座標をダイアログ中央、Y座標をダイアログ上部に設定する。
-//			my:'center center',
-//			// 位置の基準となる要素(ウィンドウ)の中心部分に配置する。
-//			at:'center center',
-//			// ウィンドウをダイアログを配置する位置の基準に指定する。
-//			of:window
-//		},
-//		// ボタンの生成と設定を行う。
-//		buttons:[
-//			         {
-//			        	 // 終了ボタンのテキスト。
-//			        	 text:'終了',
-//			        	 // ボタン押下時の処理を記述する。
-//			        	 click:function(event, ui){
-//			        		// ダイアログを完全に消去する。
-//			        		$(this).dialog("close").dialog("destroy").remove();
-//			        	 }
-//			         }
-//		         ]
-//	});
-}
 
 /* 
  * 関数名:useEditDialog(selector)

@@ -59,7 +59,7 @@ function createTag(){
 		//既にJSONが格納されていたら
 		} else {
 			//連想配列を連結する。
-			this.json = $.extend(tmp,this.json);
+			this.json = $.extend(true, this.json, tmp);
 		}
 	};
 

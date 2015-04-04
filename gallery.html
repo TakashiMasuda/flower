@@ -24,8 +24,11 @@
 				creator.outputTag('headImage', 'createImage');		// 天の画像を作る
 				creator.outputTag('pageTitle');						// タイトル領域を作る
 				creator.outputTag('gallery');						// ギャラリーページ用のギャラリーを作る。
-				//ギャラリーの内容を追加する。
-				outputKeyNumberObject(creator.json, 'photo', '.gallery');
+				//写真のJSONがあれば
+				if('1' in creator.json){
+					//ギャラリーの内容を追加する。
+					outputKeyNumberObject(creator.json, 'photo', '.gallery');
+				}
 				creator.outputTag('footImage', 'createImage');		// 地の画像を作る
 				creator.outputTag('footer');						// フッターを作る
 			

@@ -429,7 +429,7 @@ function createNewPhoto(){
 	var cookieData = GetCookies();	//ユーザ名取得のため、クッキーのデータを連想配列で取得する。
 	
 	//ユーザ名を写真に追加する。
-	$('.myPhotoUser', $new).text(cookieData['userName']);
+	$('.myPhotoUser', $new).text(cookieData['user']);
 	//今日の日付を取得し、写真に追加する。
 	$('.myPhotoDate', $new).text(getDateTime());
 }
@@ -459,8 +459,42 @@ function getDateTime(){
 function deletePhoto(){
 	//チェックボックスが入っている写真があれば
 	if($('.myPhotoCheck:checked')){
-		//選択された写真を消す。
-		$('.myPhoto').has('.myPhotoCheck:checked').remove();
+		var deleteTarget = [];	//削除対象の写真のIDを格納する配列を宣言、初期化する。
+		var json = {};			//サーバへ送信するJSONの連想配列。
+		
+		//チェックが入った写真を走査する。
+		$('.myPhoto:has(.myPhotoCheck:checked)').each(function(i){
+			//削除対象の写真のIDを配列に追加していく
+			deleteTarget[i] = $('.myPhotoId', this).text();
+		});
+		
+		//コンテンツ番号と削除対象のIDの配列をJSONの連想配列に格納する。
+		json['contentNum'] = 1;
+		json['idList'] = deleteTarget;
+		//JSONの連想配列をJSON文字列に変換する。
+		var sendJson = JSON.stringify(json);
+		
+		//Ajax通信でレコード削除のサーブレットを呼び出す。
+		$.ajax({
+			url:'deleteContent',	//レコード削除のサーブレットを呼び出す。
+			dataType:'text',		//テキストデータを返してもらう。
+			async:false,			//同期通信を行う。
+			data:{json:sendJson},	//削除関連の情報を格納したJSONを送信する。
+			success:function(text){		//通信成功時の処理。
+				//1件以上削除できていれば
+				if(!(parseInt(text))){
+					alert(text);		//削除完了のメッセージを出す。
+					//選択された写真を消す。
+					$('.myPhoto').has('.myPhotoCheck:checked').remove();
+				//削除できていなければ
+				} else {
+					alert('写真の削除に失敗しました。');			//削除失敗のメッセージを出す。
+				}
+			},
+			error:function(){		//通信失敗時の処理。
+				alert('通信に失敗しました。');		//通信失敗のメッセージを出す。
+			}
+		});
 	} else {
 		//写真未選択の旨を伝える。
 		alert('削除する写真を選んでください。');
@@ -477,16 +511,20 @@ function deletePhoto(){
  */
 function postPhoto(photo){
 	//写真のデータを連想配列にして返してもらう。
-	var photoData = createPhotoData(photo);
+	var photoData = JSON.stringify(createPhotoData(photo));
 	
 	//Ajax通信でサーバに写真のデータを送信する。
 	$.ajax({
-		url:init['photoPost'],	//初期化データの連想配列にあるURLに送信する
+		url:init['postJSON'],	//初期化データの連想配列にあるURLに送信する
+		method:"POST",			//POSTメソッドで送信量を気にせず送信できるようにする。
 		dataType:'json',		//JSONで返してもらう。
-		data:photoData,			//作成した写真データを送信する。
+		data:{json:photoData, contentNum:"1"},			//作成した写真データを送信する。
 		//通信が成功したら
 		success:function(json){
-			//特に何もせず、静かに更新する。
+			//写真が新規作成であったら
+			if(parseInt(json['isnew'])){
+				$('.myPhotoId' ,photo).text(json['isnew']);	//新規作成時に取得したIDを設定する。
+			}
 		},
 		//通信が失敗したら
 		error:function(){
@@ -506,16 +544,22 @@ function postPhoto(photo){
  */
 function createPhotoData(photo){
 	var retMap = {};	//返す連想配列を用意する。
+	//ユーザIDを送信するため、クッキーを取得する。
+	var cookie = GetCookies();
+	
 	//画像ソースを格納する。
-	retMap['src'] = $('.myPhotoLink', photo);
+	retMap['photo'] = "photo/general/web/DSC_0064.jpg";
+//	retMap['photo'] = $('.myPhotoLink', photo).attr('href');
 	//日付を格納する。
-	retMap['date'] = $('.myPhotoDate', photo);
-	//ユーザ名を格納する。
-	retMap['user'] = $('.myPhotoUser', photo);
+	retMap['postDate'] = $('.myPhotoDate', photo).text();
+	//ユーザIDを格納する。
+	retMap['userId'] = cookie['userId'];
 	//タイトルを格納する。
-	retMap['title'] = $('.myPhotoTitle', photo);
+	retMap['title'] = $('.myPhotoTitle', photo).text();
 	//コメントを格納する。
-	retMap['comment'] = $('.myPhotoComment', photo);
+	retMap['comment'] = $('.myPhotoComment', photo).text();
+	//写真IDを格納する。
+	retMap['id'] = $('.myPhotoId', photo).text();
 	
 	//作成した連想配列を返す。
 	return retMap;
@@ -649,17 +693,18 @@ $(document).on('dblclick', '.myGallery .myPhotoTitle', function(){
 /*
  * イベント名:$(document).on('blur', '.myGallery .myPhotoTitleEdit')
  * 引数  　 	:string 'blur':フォーカスが外れたときのイベントの文字列
- * 			:string '.myGallery .myPhotoTitle':写真のタイトルのセレクタ。
+ * 			:string '.myGallery .myPhotoTitle, .myGallery .myPhotoCommentEdit':写真のタイトルとコメントのセレクタ。
  * 戻り値　 :なし
  * 概要  　 :Myギャラリーの写真のタイトルの編集を終えたときのイベント。
  * 作成日　　:2015.03.27
  * 作成者　　:T.Masuda
  */
-$(document).on('blur', '.myGallery .myPhotoTitleEdit', function(){
+$(document).on('blur', '.myGallery .myPhotoTitleEdit, .myGallery .myPhotoCommentEdit', function(){
+	var $photo = $('.myPhoto').has(this);	//対象の写真のjQueryオブジェクトを取得しておく。
 	//編集モードを解除する。
 	endEditText(this);
 	//編集したデータを送信する。
-	postPhoto($('.myPhoto').has(this));
+	postPhoto($photo);
 });
 
 /*
@@ -674,22 +719,6 @@ $(document).on('blur', '.myGallery .myPhotoTitleEdit', function(){
 $(document).on('dblclick', '.myGallery .myPhotoComment', function(){
 	//コメントを編集モードにする。
 	startEditText(this);
-});
-
-/*
- * イベント名:$(document).on('blur', '.myGallery .myPhotoCommentEdit')
- * 引数  　 	:string 'blur':フォーカスが外れたときのイベントの文字列
- * 			:string '.myGallery .myPhotoCommentEdit':写真のコメント編集のセレクタ。
- * 戻り値　 :なし
- * 概要  　 :Myギャラリーの写真のコメントの編集を終えたときのイベント。
- * 作成日　　:2015.03.27
- * 作成者　　:T.Masuda
- */
-$(document).on('blur', '.myGallery .myPhotoCommentEdit', function(){
-	//編集モードを解除する。
-	endEditText(this);
-	//編集したデータを送信する。
-	postPhoto($('.myPhoto').has(this));
 });
 
 /*
@@ -736,3 +765,77 @@ $(document).on('click', '.myGalleryEditButtons .createButton', function(){
 		    }
 		})
 	});
+	
+/*
+ * 関数名:function saveMyOptionSetting()
+ * 概要  :Myオプションページの設定を保存する。
+ * 引数  :funciton func:対象の関数
+ * 戻り値:なし
+ * 作成日:2015.04.03
+ * 作成者:T.Masuda
+ */
+function saveMyOptionSetting(){
+	//設定のデータを連想配列にして返してもらう。
+	var settingData = JSON.stringify(createMyOptionData());
+	
+	//Ajax通信でサーバに写真のデータを送信する。
+	$.ajax({
+		url:init['postJSON'],	//初期化データの連想配列にあるURLに送信する
+		method:"POST",			//POSTメソッドで送信量を気にせず送信できるようにする。
+		dataType:'json',		//JSONで返してもらう。
+		data:{json:settingData, contentNum:"2"},	//作成した設定を送信する。
+		//通信が成功したら
+		success:function(json){
+			var success = parseInt(json['issuccess']);	//成功したかどうかのデータを取得する。
+			var message = "更新に失敗しました。時間をおいてお試しください。";	//メッセージを格納する変数を宣言する。
+			//取得したデータが成功のものなら
+			if(success){
+				message = "更新が完了しました。";	//成功メッセージを用意する。
+			}
+			
+			alert(message);	//結果をダイアログで表示する。
+		},
+		//通信が失敗したら
+		error:function(){
+			//保存失敗の旨を伝える。
+			alert('通信に失敗しました。時間をおいてお試しください。');
+		}
+	});
+}
+
+/*
+ * 関数名:function createMyOptionData()
+ * 概要  :Myオプションページの設定の送信データを作成する。
+ * 引数  :なし
+ * 戻り値:Object : 設定データの連想配列。
+ * 作成日:2015.04.03
+ * 作成者:T.Masuda
+ */
+function createMyOptionData(){
+	var retMap = {};	//返す連想配列を用意する。
+	//ユーザIDを送信するため、クッキーを取得する。
+	var cookie = GetCookies();
+	
+	//Myギャラリー公開設定の値を格納する。。
+	retMap['myGalleryPublication'] = $('input[name="myGalleryPublication"]:checked').attr('value');
+	//ブログ公開設定を格納する。
+	retMap['blogPublication'] = $('input[name="blogPublication"]:checked').attr('value');
+	//ブログタイトルを格納する。
+	retMap['blogTitle'] = $('input[name="blogTitle"]').val();
+	//ユーザIDを格納する。
+	retMap['userId'] = cookie['userId'];
+	
+	return retMap;	//作成したデータを返す。
+}
+/*
+ * イベント名:$(document).on('change', 'myOptionConfirmChangeButton')
+ * 引数  　 	:string 'click':クリックのイベントの文字列
+ * 			:string '.myOptionConfirmChangeButton':Myオプションページの更新ボタンのセレクタ。
+ * 戻り値　 :なし
+ * 概要  　 :Myオプションページでの設定を保存する。
+ * 作成日　　:2015.03.27
+ * 作成者　　:T.Masuda
+ */
+$(document).on('click', '.myOptionConfirmChangeButton', function(event){
+	saveMyOptionSetting();	//設定を保存する。
+});

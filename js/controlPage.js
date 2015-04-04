@@ -513,3 +513,46 @@ $(document).on('click', '.imitateForm .submit', function(){
 	//疑似サブミットの処理の関数をコールする。
 	submitImitateForm($('.imitateForm').has(this));
 });
+
+/*
+* 関数名:function createUserData(contentNum)
+* 概要  :cookieからユーザ名を取得し、コンテンツ番号と共にサーバへ送信するための連想配列に格納して返す。
+* 引数  :int contentNum:コンテンツ番号。
+* 戻り値:Object:サーバへ送信するデータを格納した連想配列。
+* 作成日　　:2015.03.31
+* 作成者　　:T.Masuda
+*/
+function createUserData(contentNum){
+	var cookie = GetCookies();	//cookieの連想配列を取得する。
+	var retMap = {};			//返却用の連想配列を準備する。
+	
+	//cookieからユーザIDを取得し、retMapに格納する。
+	retMap["userId"] = cookie["userId"];
+	//retMapにコンテンツ番号を格納する。
+	retMap["contentNum"] = contentNum;
+	
+	//作成した連想配列を返す。
+	return retMap;
+}
+
+/* クッキーを連想配列で取得する関数。http://so-zou.jp/web-app/tech/programming/javascript/cookie/#no5より。 */
+function GetCookies()
+{
+    var result = new Array();
+
+    var allcookies = unescape(document.cookie);
+    if( allcookies != '' )
+    {
+        var cookies = allcookies.split( '; ' );
+
+        for( var i = 0; i < cookies.length; i++ )
+        {
+            var cookie = cookies[ i ].split( '=' );
+
+            // クッキーの名前をキーとして 配列に追加する
+            result[ cookie[ 0 ] ] = decodeURIComponent( cookie[ 1 ] );
+        }
+    }
+    //結果を返す。
+    return result;
+}

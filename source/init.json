@@ -3,5 +3,6 @@
     "jsonDirectory": "source/",
     "jsonIdentifier": "json",
     "cookieLimitTime":"3600000",
-    "loginServlet":"LoginServlet"
+    "loginServlet":"LoginServlet",
+    "postJSON":"saveJSON"
 }

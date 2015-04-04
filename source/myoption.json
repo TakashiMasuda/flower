@@ -37,7 +37,8 @@
             "class": "myOptionRadio",
             "type": "radio",
             "name": "blogPublication",
-            "value": "0"
+            "value": "0",
+            "checked":"false"
         },
         "myOptionLabelInline1": {
             "class": "myOptionLabelInline",
@@ -47,7 +48,9 @@
             "class": "myOptionRadio",
             "type": "radio",
             "name": "blogPublication",
-            "value": "1"
+            "value": "1",
+            "checked":"false"
+            
         },
         "myOptionLabelInline2": {
             "class": "myOptionLabelInline",
@@ -57,7 +60,9 @@
             "class": "myOptionRadio",
             "type": "radio",
             "name": "blogPublication",
-            "value": "2"
+            "value": "2",
+            "checked":"false"
+            
         },
         "myOptionLabelInline3": {
             "class": "myOptionLabelInline",
@@ -73,7 +78,9 @@
             "class": "myOptionRadio",
             "type": "radio",
             "name": "myGalleryPublication",
-            "value": "0"
+            "value": "0",
+            "checked":"false"
+            
         },
         "myOptionLabelInline1": {
             "class": "myOptionLabelInline",
@@ -83,7 +90,9 @@
             "class": "myOptionRadio",
             "type": "radio",
             "name": "myGalleryPublication",
-            "value": "1"
+            "value": "1",
+            "checked":"false"
+            
         },
         "myOptionLabelInline2": {
             "class": "myOptionLabelInline",
@@ -93,7 +102,8 @@
             "class": "myOptionRadio",
             "type": "radio",
             "name": "myGalleryPublication",
-            "value": "2"
+            "value": "2",
+            "checked":"false"
         },
         "myOptionLabelInline3": {
             "class": "myOptionLabelInline",

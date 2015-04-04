@@ -6,6 +6,26 @@
   version="3.0">
 
 	<servlet>
+		<servlet-name>saveJSON</servlet-name>
+		<servlet-class>test.SaveJSON</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>saveJSON</servlet-name>
+		<url-pattern>/saveJSON</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>uploadImage</servlet-name>
+		<servlet-class>test.UploadImage</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>uploadImage</servlet-name>
+		<url-pattern>/uploadImage</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
 		<servlet-name>getJSON</servlet-name>
 		<servlet-class>test.GetJSON</servlet-class>
 	</servlet>
@@ -13,6 +33,26 @@
 	<servlet-mapping>
 		<servlet-name>getJSON</servlet-name>
 		<url-pattern>/getJSON</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>deleteContent</servlet-name>
+		<servlet-class>test.DeleteContent</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>deleteContent</servlet-name>
+		<url-pattern>/deleteContent</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>getUserJSON</servlet-name>
+		<servlet-class>test.GetUserJSON</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>getUserJSON</servlet-name>
+		<url-pattern>/getUserJSON</url-pattern>
 	</servlet-mapping>
 
 	<servlet>

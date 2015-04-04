@@ -17,16 +17,19 @@
 			<!-- fancyboxのCSSを読み込む。 -->
 			<link rel="stylesheet" type="text/css" href="js/source/jquery.fancybox.css" media="screen" />
 			<script>
-				creator.getJsonFile('source/mygallery.json');			// Myギャラリーページ用のJSONデータを取得する。
-				creator.getJsonFile('source/mygallerycontent.json');	// Myギャラリー生成用のJSONデータを取得する。
+				creator.getJsonFile('source/mygallery.json');		// Myギャラリーページ用のJSONデータを取得する。
+				creator.getJsonFile('getUserJSON', createUserData(1));	// Myギャラリー生成用のJSONデータを取得する。
 				creator.getJsonFile('source/commonJson.json');		// 各ページ共通のパーツのJSONデータを取得する。
 				creator.getDomFile('source/template.html');			// HTMLのテンプレートデータをを取得する。
 				creator.outputTag('headImage', 'createImage');		// 天の画像を作る
 				creator.outputTag('pageTitle');						// タイトル領域を作る
 				creator.outputTag('myGalleryEditButtons');			// ギャラリー編集用のボタンを作る。
 				creator.outputTag('myGallery');						// ギャラリーページ用のギャラリーを作る。
-				//ギャラリーの内容を追加する。
-				outputKeyNumberObject(creator.json, 'myPhoto', '.myGallery');
+				//写真のJSONがあれば
+				if('1' in creator.json){
+					//ギャラリーの内容を追加する。
+					outputKeyNumberObject(creator.json, 'myPhoto', '.myGallery');
+				}
 				creator.outputTag('footImage', 'createImage');		// 地の画像を作る
 				creator.outputTag('footer');						// フッターを作る
 			
