@@ -220,8 +220,6 @@ public class SaveJSON extends HttpServlet {
 	//POSTメソッドで通信する。
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 		    throws ServletException, IOException {
-		// 文字エンコード。JSON設定
-		response.setContentType("application/json;charset=UTF-8");
 		//テキストを出力する準備をする。
 		PrintWriter out = response.getWriter();
 		//返却するテキストを格納する変数を宣言、初期化する。

@@ -548,8 +548,7 @@ function createPhotoData(photo){
 	var cookie = GetCookies();
 	
 	//画像ソースを格納する。
-	retMap['photo'] = "photo/general/web/DSC_0064.jpg";
-//	retMap['photo'] = $('.myPhotoLink', photo).attr('href');
+	retMap['photo'] = $('.myPhotoLink', photo).attr('href');
 	//日付を格納する。
 	retMap['postDate'] = $('.myPhotoDate', photo).text();
 	//ユーザIDを格納する。
@@ -746,24 +745,36 @@ $(document).on('click', '.myGalleryEditButtons .createButton', function(){
  */
 	//アップロードボタンの値が変わったときのイベント(=アップロードを行った後のイベント)
 	$(document).on('change', '.myGalleryEditButtons .uploader', function(event){
-			//ファイルを取得する
-		 	var file = event.target.files[0];
-		  	//画像の縮小を行う。
-			canvasResize(file, {
-		   	 crop: false,	//画像を切り取るかを選択する
-		   	 quality: 80,	//画像の品質
-		   	 //コールバック関数。画像パスを引数として受け取る。
-		   	 callback: function(data) {
-		 		//createTagで新たな写真を作成する。
-		 		creator.outputTag('blankPhoto', 'myPhoto', '.myGallery');
-		 		//新たな写真を初期化する。
-		 		createNewPhoto();
-		 		//画像拡大用のタグにソースをセットする。
-		 		$('.myPhotoLink:last').attr('href', data);
-		 		//画像サムネイルに使う要素の画像を設定する。
-		 		$('.myPhotoImage:last').css('background-image', 'url('  +  data + ')');
-		    }
-		})
+		//ファイルを取得する
+		var file = event.target.files[0];
+		//保存先を指定して画像のアップロードを行う。
+        $(this).upload('uploadImage',"photo/general/web", function(xml) {
+        	//返ってきたデータから成否判定の値を取り出す。
+        	var issuccess = parseInt($(xml).find('issuccess').text());
+        	if(issuccess){	//保存に成功していたら
+        		var src = $(xml).find('src').text();	//画像の保存先を取得する。
+        		//画像の縮小を行う。
+        		canvasResize(file, {
+        			crop: false,	//画像を切り取るかを選択する
+        			quality: 80,	//画像の品質
+        			//コールバック関数。画像パスを引数として受け取る。
+        			callback: function(data) {
+        				//createTagで新たな写真を作成する。
+        				creator.outputTag('blankPhoto', 'myPhoto', '.myGallery');
+        				//新たな写真を初期化する。
+        				createNewPhoto();
+        				//画像拡大用のタグにソースをセットする。
+        				$('.myPhotoLink:last').attr('href', src);
+        				//画像サムネイルに使う要素の画像を設定する。
+        				$('.myPhotoImage:last').css('background-image', 'url('  +  src + ')');
+        			}
+        		})
+        	//保存に失敗していたら
+        	} else {
+        		alert($(xml).find('message').text());	//メッセージを取り出してアラートに出す。
+        	}
+        //サーバから返されたデータをXMLとして扱う。
+        },"xml");
 	});
 	
 /*

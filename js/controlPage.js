@@ -227,7 +227,7 @@ function createFormData(form){
  * 作成日 :2015.03.10
  * 作成者 :T.M
  */
-$(document).on('submit', 'form', function(event){
+$(document).on('submit', '.contactForm, .sendForm, .editStudent', function(event){
 	//submitイベントをキャンセルする。
 	event.preventDefault();
 	//フォームのaction属性から送信URLを取得する。

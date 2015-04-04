@@ -19,9 +19,10 @@
         "deleteButton": {
             "text": "削除"
         },
-        "uploader":{
-        	"type":"file",
-        	"style":"display:none"
+        "uploader": {
+            "type": "file",
+            "style": "display:none",
+            "name": "filename"
         }
     },
     "blankPhoto": {
